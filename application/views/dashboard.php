@@ -12,18 +12,20 @@
 <div class="wrap">  
     <div class="main">
         <!-- start grids_of_3 -->
+        <?php foreach ($ikan as $fish) : ?>
         <div class="grids_of_3">
             <div class="grid1_of_3">
                 <a href="details.html">
-                    <img src="<?php base_url()?>assets/images/pic1.jpg" alt=""/>
-                    <h3>branded shoes</h3>
+                    <img src="<?=base_url().'assets/images/'.$fish->gambar?>" alt=""/>
+                    <h3><?= $fish->nama?></h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>Rp. <?= $fish->harga?><span>BELI</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
             </div>
-            <div class="grid1_of_3">
+            <?php endforeach; ?>
+            <!-- <div class="grid1_of_3">
                 <a href="details.html">
                     <img src="<?php base_url()?>assets/images/pic2.jpg" alt=""/>
                     <h3>branded t-shirts</h3>
@@ -75,7 +77,7 @@
                     </div>
                     <span class="b_btm"></span>
                 </a>
-            </div>
+            </div> -->
             <div class="clear"></div>
         </div>  
         <!-- end grids_of_3 -->
