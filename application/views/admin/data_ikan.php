@@ -1,18 +1,24 @@
-
-    <div class="main-panel">
-        <div class="content-wrapper">
-                            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_ikan">
-  Tambah Data Ikan
-</button>
-
+<div class="main-panel">
+<div class="content-wrapper">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_ikan">Tambah Data Ikan</button>
+<?php
+	$edit="submit";
+  $nama="";
+  $ukuran="";
+  $berat="";
+  $usia="";
+  $harga="";
+  $stok="";
+  $gambar="";
+?>
 <!-- Modal -->
 <div class="modal fade" id="tambah_ikan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Tambah Data Ikan</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" <?=$edit="submit"?>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -20,42 +26,43 @@
       <form action="<?= base_url().'admin/data_ikan/tambah_aksi'?>" class="forms-sample"  method="post" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Nama</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Username">
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" value="<?=$nama?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Ukuran</label>
-                      <input type="number" class="form-control" id="ukuran" name="ukuran" placeholder="Email">
+                      <input type="number" class="form-control" id="ukuran" name="ukuran" placeholder="Ukuran(CM)">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Berat</label>
-                      <input type="number" class="form-control" id="berat" name="berat" placeholder="Password">
+                      <input type="number" class="form-control" id="berat" name="berat" placeholder="Berat(Gr)">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Usia</label>s
-                      <input type="number" class="form-control" id="usia" name="usia" placeholder="Password">
+                      <label for="exampleInputConfirmPassword1">Usia</label>
+                      <input type="number" class="form-control" id="usia" name="usia" placeholder="Usia(Bln)">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputConfirmPassword1">Harga</label>
-                      <input type="number" class="form-control" id="harga" name="harga" placeholder="Password">
+                      <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga(IDR)">
                     </div>   
                     <div class="form-group">
                       <label for="exampleInputConfirmPassword1">Stok</label>
-                      <input type="number" class="form-control" id="stok" name="stok" placeholder="Password">
-                    </div>                    <div>
+                      <input type="number" class="form-control" id="stok" name="stok" placeholder="Stock">
+                    </div>                    
+                    <div>
                     <label class="form-label" for="customFile">Gambar</label>
                     <input type="file" class="form-control" id="gambar" name="gambar" />   
                     </div>    
                     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="submit">Simpan</button>
+        <button type="submit" class="btn btn-primary" id=<?=$edit?>'><?=$edit?></button>
       </div>
-                        </form>           
+      </form>           
     </div>
-     
-
     </div>
   </div>
 </div>
+
+
           <div class="mt-4 row">
             
           <div class="col-lg-12 grid-margin stretch-card">
@@ -74,7 +81,7 @@
                           <th>Ukuran</th>
                           <th>Berat</th>
                           <th>Usia</th>
-                          <th>Jenis Kelamin</th>
+                          
                           <th>Harga</th>
                           <th>Stok</th>
                           <th>Gambar</th>
@@ -93,20 +100,69 @@
                           <td><?=$fish->usia?></td>
                           <td><?=$fish->harga?></td>
                           <td><?=$fish->stok?></td>
-                          <td><?=$fish->gambar?></td>
-                          <td><center><button type="button" class="btn btn-inverse-info btn-fw">Update</button>
-                          <button type="button" class="btn btn-inverse-danger btn-fw">Delete</button></center>
-                        </td>
-                        </tr>
-                        <?php endforeach; ?>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div> 
+                          <td><img src="<?=base_url('uploads/'.$fish->gambar)?>"width="720" height="480" /></td>
+                          <td><center>
+                          <button type="button" class="btn btn-inverse-info btn-fw" data-toggle="modal" data-target="#update_ikan">  Update Data Ikan</button>
+                          <div class="modal fade" id="update_ikan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" <?=$edit="submit"?>
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                <form action="<?= base_url().'admin/data_ikan/update/'.$fish->id?>" class="forms-sample"  method="post" enctype="multipart/form-data">
+                                              <div class="form-group">
+                                              <p style="text-align: left"><label for="exampleInputUsername1">Nama</label>
+                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" value="<?=$fish->nama?>">
+                                              </div>
+                                              <div class="form-group">
+                                              <p style="text-align: left"><label for="exampleInputEmail1">Ukuran</label>
+                                                <input type="number" class="form-control" id="ukuran" name="ukuran" placeholder="Ukuran(CM)">
+                                              </div>
+                                              <div class="form-group">
+                                              <p style="text-align: left"><label for="exampleInputPassword1">Berat</label>
+                                                <input type="number" class="form-control" id="berat" name="berat" placeholder="Berat(Gr)">
+                                              </div>
+                                              <div class="form-group">
+                                              <p style="text-align: left"><label for="exampleInputConfirmPassword1">Usia</label>
+                                                <input type="number" class="form-control" id="usia" name="usia" placeholder="Usia(Bln)">
+                                              </div>
+                                              <div class="form-group">
+                                              <p style="text-align: left"><label for="exampleInputConfirmPassword1">Harga</label>
+                                                <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga(IDR)">
+                                              </div>   
+                                              <div class="form-group">
+                                              <p style="text-align: left"><label for="exampleInputConfirmPassword1">Stok</label>
+                                                <input type="number" class="form-control" id="stok" name="stok" placeholder="Stock">
+                                              </div>                    
+                                              <div>
+                                              <p style="text-align: left"><label class="form-label" for="customFile">Gambar</label>
+                                              <input type="file" class="form-control" id="gambar" name="gambar" />   
+                                              </div>    
+                                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary" id=<?=$edit?>'><?=$edit?></button>
+                                </div>
+                                </form>           
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+                <button type="button" class="btn btn-inverse-danger btn-fw">Delete</button></center>
+              </td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
         </div>
-        </div>
-        <!-- content-wrapper ends -->
+      </div>
+    </div>
+  </div> 
+</div>
+</div>
+<!-- content-wrapper ends -->
       
 
