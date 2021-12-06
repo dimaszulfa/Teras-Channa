@@ -4,7 +4,7 @@
 <div class="wrap">
     <div class="header">
         <div class="logo">
-            <a href="<?= base_url()?>"><img src="<?php echo base_url()?>assets/images/logo.png" alt=""/> </a>
+            <a href="<?= base_url()?>"><img src="<?php echo base_url()?>assets/images/logoss.png" alt=""/> </a>
         </div>
         <div class="h_icon">
         <ul class="icon1 sub-icon1">
@@ -33,15 +33,8 @@
             <ul>
                 <li class="active"><a href="<?= base_url()?>">Home</a></li> |
                 <li><a href="#">Perawatan Ikan</a></li> |
-                <li><a href="handbags.html">handbags</a></li> |
-                <li><a href="accessories.html">accessories</a></li> |
-                <li><a href="wallets.html">wallets</a></li> |
-                <li><a href="sale.html">sale</a></li> |
-                <li><a href="index.html">mens store</a></li> |
-                <li><a href="shoes.html">shoes</a></li> |
-                <li><a href="sale.html">vintage</a></li> |
-                <li><a href="service.html">services</a></li> |
-                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="handbags.html">Kontak Kami</a></li> |
+                
             </ul>
         </div>
         <div class="top-nav">

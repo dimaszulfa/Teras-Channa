@@ -11,6 +11,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Teras Channa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="<?php echo base_url()?>assets/css/navigation.css" rel="stylesheet" type="text/css" media="all" />
