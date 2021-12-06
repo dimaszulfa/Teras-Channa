@@ -11,7 +11,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Ubah Data</h4>
                   <?php foreach($ikan as $ikn) :?>
-                  <form method="post" class="forms-sample">
+                  <form method="post" class="forms-sample" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputNama1">Nama</label>
                       <input type="text" value="<?=$ikn->nama?>" name="nama" class="form-control" id="nama" placeholder="Nama">
