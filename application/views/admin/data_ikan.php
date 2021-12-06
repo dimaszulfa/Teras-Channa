@@ -2,16 +2,7 @@
 <div class="content-wrapper">
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_ikan">Tambah Data Ikan</button>
-<?php
-	$edit="submit";
-  $nama="";
-  $ukuran="";
-  $berat="";
-  $usia="";
-  $harga="";
-  $stok="";
-  $gambar="";
-?>
+
 <!-- Modal -->
 <div class="modal fade" id="tambah_ikan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -26,11 +17,11 @@
       <form action="<?= base_url().'admin/data_ikan/tambah_aksi'?>" class="forms-sample"  method="post" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Nama</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" value="<?=$nama?>">
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsername1">Famili</label>
-                      <input type="text" class="form-control" id="Famili" name="Famili" placeholder="Famili" value="<?=$nama?>">
+                      <input type="text" class="form-control" id="famili" name="famili" placeholder="Famili" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Ukuran</label>
@@ -58,11 +49,11 @@
                     </div>    
                     <div class="form-group">
                       <label for="exampleKeterangan1">Keterangan</label>
-                      <textarea name ="Keterangan" class="form-control" id="exampleKeterangan1" rows="4"></textarea>
+                      <textarea name ="keterangan" class="form-control" id="exampleKeterangan1" rows="4"></textarea>
                     </div>
                     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id=<?=$edit?>'><?=$edit?></button>
+        <button type="submit" class="btn btn-primary" id='submit'>Submit</button>
       </div>
       </form>           
     </div>
@@ -103,17 +94,19 @@
                         <tr>
                           <td><?= $no++?></td>
                           <td><?=$fish->nama?></td>
-                          <td><!--<?=$fish->nama?>--></td>
+                          <td><?=$fish->famili?></td>
                           <td><?=$fish->ukuran?></td>
                           <td><?=$fish->berat?></td>
                           <td><?=$fish->usia?></td>
                           <td><?=$fish->harga?></td>
                           <td><?=$fish->stok?></td>
                           <td><img src="<?=base_url('uploads/'.$fish->gambar)?>"width="720" height="480" /></td>
-                          <td><!--<?=$fish->nama?>--></td>
+                          <td><?=$fish->keterangan?></td>
                           <td><center>
-                          <button type="button" class="btn btn-inverse-info btn-fw" data-toggle="modal" data-target="#update_ikan" ><a href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data Ikan</a></button>
-                <button type="button" class="btn btn-inverse-danger btn-fw">Delete</button></center>
+                          <button type="button" class="btn btn-inverse-info btn-fw" id="edit" value="Edit" ><a href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data Ikan</a></button>
+                <button type="button"
+                onclick="return confirm('Yakin Mau dihapus data yang dipilih?')"
+                class="btn btn-inverse-danger btn-fw"><a href="<?= site_url('admin/data_ikan/delete/'.$fish->id)?>">Delete</button></center>
               </td>
               </tr>
               <?php endforeach; ?>
