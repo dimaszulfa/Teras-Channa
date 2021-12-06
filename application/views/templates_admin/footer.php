@@ -17,7 +17,7 @@
   <script src="<?= base_url()?>assets/admin/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="<?= base_url()?>assets/admin/vendors/chart.js/Chart.min.js"></script>
+  <script src="<?=base_url()?>assets/admin/vendors/chart.js/Chart.min.js"></script>
   <script src="vendors/datatables.net/jquery.dataTables.js"></script>
   <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
   <script src="js/dataTables.select.min.js"></script>

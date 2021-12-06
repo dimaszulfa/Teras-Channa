@@ -107,24 +107,6 @@
         }
 
 
-        // public function update()
-        // {
-        //     $data=array(
-        //         'id' => $this->input->post('id'),
-        //         'nama' => $this->input->post('nama'),
-        //         'ukuran' => $this->input->post('ukuran'),
-        //         'berat' => $this->input->post('berat'),
-        //         'usia' => $this->input->post('usia'),
-        //         'harga' => $this->input->post('harga'),
-        //         'stok' => $this->input->post('stok')
-        //         'gambar' => $this->input->post('gambar')
-        //     );
-        //     $this->model_ikan->update_data($where,$data, 'tbl_ikan');
-        //     redirect('admin/data_ikan/index');
-
-        //     $this->db->where('id',$id);
-        //     $this->db->update('tbl_ikan',$data);
-        // }
 
     }
 

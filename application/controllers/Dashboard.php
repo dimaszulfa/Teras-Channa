@@ -7,7 +7,6 @@ class Dashboard extends CI_Controller{
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('templates/slider');
-        $this->load->view('templates/cursual');
         $this->load->view('dashboard', $data);
         $this->load->view('templates/footer');
     }
@@ -16,6 +15,13 @@ class Dashboard extends CI_Controller{
         if($this->input->post('submit')){
             $this->Model_ikan->create();
         }
+    }
+
+    public function detail_keranjang(){
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('cart');
+        $this->load->view('templates/footer'); 
     }
 
 }
