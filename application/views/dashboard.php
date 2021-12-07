@@ -17,12 +17,12 @@
                         <div class="price">
                             <br>
                             <h4 style="color:black"><?= $ikan->nama ?></h4>
-                            <img src="<?= base_url() . 'uploads/' . $ikan->gambar ?>" alt="" />
-                            <h4>Rp. <?= $ikan->harga ?></h4>
+                            <a href="<?= base_url('dashboard/detail/').$ikan->id?>"><img src="<?= base_url() . 'uploads/' . $ikan->gambar ?>" alt="" /></a>
+                            <h4>Rp. <?= number_format($ikan->harga, 0, ",",".") ?></h4>
                             <button type="button" class="btn btn-primary">
                                 <h4 style="color:white">Beli</h4>
                             </button> <button type="button" class="btn btn-success">
-                                <h4 style="color:white">Tambah Ke Keranjang</h4>
+                            <h4 style="color:white"><a style="color:white" href="<?=base_url('dashboard/tambah_keranjang/'.$ikan->id)?>">Tambah Ke Keranjang</a></h4>
                             </button>
 
                         </div>

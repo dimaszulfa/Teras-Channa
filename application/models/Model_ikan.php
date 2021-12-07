@@ -39,6 +39,17 @@ class Model_ikan extends CI_Model {
 		return $query->row();
 	}
 
+    public function find($id){
+        $result = $this->db->where('id',$id)
+        ->limit(1)
+        ->get('tbl_ikan');
+        if($result->num_rows()>0){
+            return $result->row();
+        } else{
+            return array();
+        }
+    }
+
 }
 
 ?>

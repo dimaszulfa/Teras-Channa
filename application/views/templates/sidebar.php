@@ -7,14 +7,13 @@
             <a href="<?= base_url()?>"><img src="<?php echo base_url()?>assets/images/logoss.png" alt=""/> </a>
         </div>
         <div class="h_icon">
-        <ul class="icon1 sub-icon1">
-            <li><a class="active-icon c1" href="#"><i>$300</i></a>
-                <ul class="sub-icon1 list">
-                    <li><h3>shopping cart empty</h3><a href=""></a></li>
-                    <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
-                </ul>
-            </li>
-        </ul>
+        <!-- <ul class="icon1 sub-icon1"> -->
+            <a class="active-icon c1" style="text-decoration:none;" href="<?= base_url().'dashboard/detail_keranjang'?>"><i><?php echo $this->cart->total_items().'items' ?></i></a>                <ul class="sub-icon1 list">
+                    <!-- <li><h3>shopping cart empty</h3><a href=""></a></li>
+                    <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li> -->
+                <!-- </ul>
+            </li> -->
+        <!-- </ul> -->
         </div>
         <div class="h_search">
             <form>

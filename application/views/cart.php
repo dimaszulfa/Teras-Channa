@@ -11,23 +11,37 @@
 <div class="main_bg">
 <div class="wrap">  
     <div class="main">
-        <!-- start grids_of_3 -->
-        <?php foreach ($ikans as $ikan) : ?>
-        <div class="grids_of_3">
-            <div class="grid1_of_3">
-                <a href="details.html">
-                    <img src="<?=base_url().'uploads/'.$ikan->gambar?>" alt=""/>
-                    <h3><?= $ikan->nama?></h3>
-                    <div class="price">
-                        <h4>Rp. <?= $ikan->harga?><span>BELI</span></h4>
-                    </div>
-                    <span class="b_btm"></span>
-                </a>
+        <div class="container-fluid">
+            <h4>Keranjang Belanja</h4>
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Sub-total</th>
+                </tr>
+                <?php
+                $no=0;
+                foreach ($this->cart->contents() as $items) : ?>
+                <tr>
+                    <td><?= $no++?></td>
+                    <td><?=  $items['name']?></td>
+                    <td><?=  $items['qty']?></td>
+                    <td align="right">Rp. <?=number_format($items['price'], 0, ',','.')?></td>
+                    <td align="right">Rp. <?= number_format($items['subtotal'], 0, ',','.')?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr><td colspan="4"></td>
+                    <td align="right">Rp. <?= number_format($this->cart->total()), 0, ',','.'?></td>
+                </tr>
+            </table>
+            <div align="right">
+            <a href="<?= base_url('dashboard/hapus_keranjang')?>"><div class="btn btn-danger text-center">Hapus Keranjang</div></a>
+            <a href="<?= base_url('dashboard/index')?>"><div class="btn btn-primary text-center">Lanjutkan belanja</div></a>
+            <a href="<?= base_url('dashboard/pembayaran')?>"><div class="btn btn-success text-center">Lanjutkan belanja</div></a>
             </div>
-            <?php endforeach; ?>
-            <div class="clear"></div>
-        </div>  
-        <!-- end grids_of_3 -->
+        </div>
 
     </div>
 </div>

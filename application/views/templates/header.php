@@ -15,7 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="<?php echo base_url()?>assets/css/navigation.css" rel="stylesheet" type="text/css" media="all" />
+<!-- <link href="<?php echo base_url()?>assets/css/navigation.css" rel="stylesheet" type="text/css" media="all" /> -->
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
 <!-- start slider -->       
     <link href="<?php echo base_url()?>assets/css/slider.css" rel="stylesheet" type="text/css" media="all" />
