@@ -1,0 +1,11 @@
+
+	.invalid-feedback:empty {
+		display: none;
+	}
+	.invalid-feedback {
+		font-size: smaller;
+		color: rgb(153, 16, 16);
+	}
+	.invalid {
+		border: 2px solid #e74c3c;
+	  }
