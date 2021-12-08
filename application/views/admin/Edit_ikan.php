@@ -41,12 +41,13 @@
                       <input type="number" value="<?=$ikn->stok?>" name="stok" class="form-control" id="exampleInputStok1" placeholder="Stok">
                     </div>
                     <div>
-                    <label class="form-label" for="customFile">Gambar</label>
-                    <input type="file" class="form-control" id="gambar" name="gambar" value="<?=$ikn->gambar?>"/>   
+                    <label class="form-label" for="customFile">Gambar</label><br>
+                    <img style="width: 200px; height=200px;"src="<?=base_url().'uploads/'.$ikn->gambar?>" alt="" class="img-thumbnail mb-2 mx-50 mh-50">
+                    <input type="file" class="form-control" id="gambar" name="gambar" value="<?=$ikn->gambar?>"/>
                     </div>    
                     <div class="form-group">
                       <label for="exampleKeterangan1">Keterangan</label>
-                      <textarea name ="keterangan" value="<?=$ikn->keterangan?>" class="form-control" id="exampleKeterangan1" rows="4"></textarea>
+                      <textarea name="keterangan" class="form-control" id="exampleKeterangan1" rows="4"><?=$ikn->keterangan?></textarea>
                     </div>
                     <input type="submit" class="btn btn-primary mr-2" name="submit">
                     <button class="btn btn-light">Batal</button>

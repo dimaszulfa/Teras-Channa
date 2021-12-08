@@ -67,7 +67,6 @@
           <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-
                   <h4 class="card-title">Data Ikan Channa</h4>
                   <p class="card-description">
                   </p>
@@ -100,13 +99,13 @@
                           <td><?=$fish->usia?></td>
                           <td><?=$fish->harga?></td>
                           <td><?=$fish->stok?></td>
-                          <td><img src="<?=base_url('uploads/'.$fish->gambar)?>"width="720" height="480" /></td>
+                          <th><img src="<?=base_url('uploads/'.$fish->gambar)?>" style="width:100px;height:100px;" /></th>
                           <td><?=$fish->keterangan?></td>
                           <td><center>
-                          <button type="button" class="btn btn-inverse-info btn-fw" id="edit" value="Edit" ><a href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data Ikan</a></button>
+                          <button type="button" class="btn btn-info" id="edit" value="Edit" ><b><a style="color:white" href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data</a></b></button>
                 <button type="button"
                 onclick="return confirm('Yakin Mau dihapus data yang dipilih?')"
-                class="btn btn-inverse-danger btn-fw"><a href="<?= site_url('admin/data_ikan/delete/'.$fish->id)?>">Delete</button></center>
+                class="btn btn-danger"><b><a style="color:white" href="<?= site_url('admin/data_ikan/delete/'.$fish->id)?>">Delete</a></b></button></center>
               </td>
               </tr>
               <?php endforeach; ?>

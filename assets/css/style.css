@@ -455,7 +455,9 @@ body {
 	position: relative;
 }
 .grid1_of_3:first-child{
-	margin-left: 0;
+	/* margin-left: 0; */
+	margin: 5px;
+	height: 650px;
 }
 .grid1_of_3 a{
 	padding: 2%;
@@ -474,7 +476,7 @@ body {
 	transition: all 0.3s ease-in-out;
 }
 .grid1_of_3:hover h3,.grid1_of_3:hover h4 span{
-	color: rgb(24, 141, 118);
+	/* color: rgb(24, 141, 118); */
 }
 .b_btm{
 	position: absolute;
@@ -495,7 +497,6 @@ body {
 .price h4 span{
 	display: inline-block;
 	font-size: 1.1em;
-	background: #3CC395;
 	color: #ffffff;
 	padding: 8px 20px;
 	margin-left: 30px;
@@ -1163,10 +1164,7 @@ p.para{
 	-webkit-box-shadow: 2px 0 2px rgba(0,0,0,0.1), -2px 0 2px rgba(0,0,0,0.1);
 	-moz-box-shadow: 2px 0 2px rgba(0,0,0,0.1), -2px 0 2px rgba(0,0,0,0.1);
 	-o-box-shadow: 2px 0 2px rgba(0,0,0,0.1), -2px 0 2px rgba(0,0,0,0.1);
-	border-radius: 3px 3px 0 0;
-	-webkit-border-radius: 3px 3px 0 0;
-	-moz-border-radius: 3px 3px 0 0;
-	-o-border-radius: 3px 3px 0 0;
+	
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;

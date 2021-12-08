@@ -55,10 +55,11 @@ class Dashboard extends CI_Controller{
         $this->load->view('proses_pesanan');
         $this->load->view('templates/footer'); 
     }
-    public function detail(){
+    public function detail($id){
+        $ikan['data'] = $this->Model_ikan->find($id);
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('shop_detail');
+        $this->load->view('shop_detail', $ikan);
         $this->load->view('templates/footer'); 
     }
 
