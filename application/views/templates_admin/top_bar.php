@@ -1,7 +1,5 @@
 
 <body>
-<!-- <link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/navbar.css" /> -->
-        
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -74,22 +72,6 @@
               </a>
             </div>
           </li>
-          <!-- <li class="nav-item nav-profile dropdown">
-          <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <div class="dropdown">
-              <button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </div>
-          </li> -->
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="<?= base_url()?>assets/admin/images/faces/face28.jpg" alt="profile"/>
