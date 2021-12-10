@@ -15,44 +15,47 @@
       </div>
       <div class="modal-body">
       <form action="<?= base_url().'admin/data_ikan/tambah_aksi'?>" class="forms-sample"  method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Nama</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Famili</label>
-                      <input type="text" class="form-control" id="famili" name="famili" placeholder="Famili" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Ukuran</label>
-                      <input type="number" class="form-control" id="ukuran" name="ukuran" placeholder="Ukuran(CM)">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Berat</label>
-                      <input type="number" class="form-control" id="berat" name="berat" placeholder="Berat(Gr)">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Usia</label>
-                      <input type="number" class="form-control" id="usia" name="usia" placeholder="Usia(Bln)">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Harga</label>
-                      <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga(IDR)">
-                    </div>   
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Stok</label>
-                      <input type="number" class="form-control" id="stok" name="stok" placeholder="Stock">
-                    </div>                    
-                    <div>
-                    <label class="form-label" for="customFile">Gambar</label>
-                    <input type="file" class="form-control" id="gambar" name="gambar" />   
-                    </div>    
-                    <div class="form-group">
-                      <label for="exampleKeterangan1">Keterangan</label>
-                      <textarea name ="keterangan" class="form-control" id="exampleKeterangan1" rows="4"></textarea>
-                    </div>
-                    <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <div class='error_msg'>
+      </div>              
+      <div class="form-group">
+        <label for="exampleInputUsername1">Nama</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" >
+        <div style="color: red;"><?= form_error('nama'); ?></div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUsername1">Famili</label>
+        <input type="text" class="form-control" id="famili" name="famili" placeholder="Famili" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Ukuran</label>
+        <input type="number" class="form-control" id="ukuran" name="ukuran" placeholder="Ukuran(CM)">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Berat</label>
+        <input type="number" class="form-control" id="berat" name="berat" placeholder="Berat(Gr)">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputConfirmPassword1">Usia</label>
+        <input type="number" class="form-control" id="usia" name="usia" placeholder="Usia(Bln)">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputConfirmPassword1">Harga</label>
+        <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga(IDR)">
+      </div>   
+      <div class="form-group">
+        <label for="exampleInputConfirmPassword1">Stok</label>
+        <input type="number" class="form-control" id="stok" name="stok" placeholder="Stock">
+      </div>                    
+      <div>
+      <label class="form-label" for="customFile">Gambar</label>
+      <input type="file" class="form-control" id="gambar" name="gambar" />   
+      </div>    
+      <div class="form-group">
+        <label for="exampleKeterangan1">Keterangan</label>
+        <textarea name ="keterangan" class="form-control" id="exampleKeterangan1" rows="4"></textarea>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary" id='submit'>Submit</button>
       </div>
       </form>           
@@ -62,11 +65,14 @@
 </div>
 
 
+
+
           <div class="mt-4 row">
             
           <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                <div style="color: red;"><?php echo validation_errors(); ?></div>
                   <h4 class="card-title">Data Ikan Channa</h4>
                   <p class="card-description">
                   </p>
@@ -99,13 +105,10 @@
                           <td><?=$fish->usia?></td>
                           <td><?=$fish->harga?></td>
                           <td><?=$fish->stok?></td>
-                          <th><img src="<?=base_url('uploads/'.$fish->gambar)?>" style="width:100px;height:100px;" /></th>
                           <td><?=$fish->keterangan?></td>
                           <td><center>
-                          <button type="button" class="btn btn-info" id="edit" value="Edit" ><b><a style="color:white" href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data </a></b></button>
                 <button type="button"
                 onclick="return confirm('Yakin Mau dihapus data yang dipilih?')"
-                class="btn btn-danger"><b><a style="color:white" href="<?= site_url('admin/data_ikan/delete/'.$fish->id)?>">Delete</a></b></button></center>
               </td>
               </tr>
               <?php endforeach; ?>
