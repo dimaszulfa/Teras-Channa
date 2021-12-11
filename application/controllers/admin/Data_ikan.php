@@ -69,8 +69,8 @@
                 $stok = $this->input->post('stok');
                 $keterangan = $this->input->post('keterangan');
                 $gambar = $_FILES['gambar']['name'];
-                if ($gambar !== "dasasd"){
-                    $config['upload_path'] = './uploads';
+                if ($gambar !== ""){
+                    $config['uploa  d_path'] = './uploads';
                     $config['allowed_types'] = 'jpeg|png|gif|jpg';
     
                     $this->load->library('upload', $config);
@@ -106,7 +106,12 @@
             redirect('admin/data_ikan/index');
         }
 
-
+        public function read_by($id)
+        {
+            $this->db->where('id', $id);
+            $query=$this->db->get('tbl_ikan');
+            return $query->row();
+        }
 
     }
 
