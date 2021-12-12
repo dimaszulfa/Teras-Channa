@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat Lengkap</label>
-                                <input type="text" name="Alamat" placeholder="Alamat Lengkap anda" class="form-control">
+                                <input type="text" name="alamat" placeholder="Alamat Lengkap anda" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">No. Telepon </label>
