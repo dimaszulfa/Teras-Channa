@@ -22,7 +22,7 @@
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('admin/data_ikan') ?>"><span class="menu-title">Data Ikan</span></a>
-            <li class="nav-item"><a class="nav-link" href="#"><span class="menu-title">Data Penjualan</span></a>
+            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('admin/Data_checkout') ?>"><span class="menu-title">Data Penjualan</span></a>
             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('admin/invoice') ?>"><span class="menu-title">Data Ikan</span></a>
 
           </ul>
