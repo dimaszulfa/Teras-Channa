@@ -33,13 +33,17 @@
 
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="<?= site_url('otontefikasi/changedata')?>">
                 <i class="ti-settings text-primary"></i>
-                Settings
+                Ubah Data Pengguna
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="<?= site_url('otontefikasi/changepassnokey')?>">
+                <i class="ti-lock text-primary"></i>
+                Ubah Sandi Pengguna
+              </a>
+              <a class="dropdown-item" href="<?= site_url('otontefikasi/logout')?>">
                 <i class="ti-power-off text-primary"></i>
-                Logout
+                Logout (keluar)
               </a>
             </div>
           </li>
