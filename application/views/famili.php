@@ -11,7 +11,7 @@
     <div class="wrap">
         <div class="main">
             <!-- start grids_of_3 -->
-            <?php foreach ($ikans as $ikan) : ?>
+            <?php foreach ($famili as $ikan) : ?>
                 <div class="grids_of_3">
                     <div class="grid1_of_3">
                         <a href="<?= base_url('dashboard/detail/') . $ikan->id ?>"><img src="<?= base_url() . 'uploads/' . $ikan->gambar ?>" alt="" /></a>

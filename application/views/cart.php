@@ -39,7 +39,7 @@
             <div align="right">
             <a href="<?= base_url('dashboard/hapus_keranjang')?>"><div class="btn btn-danger text-center">Hapus Keranjang</div></a>
             <a href="<?= base_url('dashboard/index')?>"><div class="btn btn-primary text-center">Lanjutkan belanja</div></a>
-            <a href="<?= base_url('dashboard/pembayaran')?>"><div class="btn btn-success text-center">Lanjutkan belanja</div></a>
+            <a href="<?= base_url('dashboard/pembayaran')?>"><div class="btn btn-success text-center">Pembayaran</div></a>
             </div>
         </div>
 

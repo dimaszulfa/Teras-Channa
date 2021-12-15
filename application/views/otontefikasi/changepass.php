@@ -18,7 +18,7 @@
             <!-- Codrops top bar -->
             
             <header>
-                <h1>Reset Password Akun <span>TERAS CHANNA</span></h1>
+                <h1>Ubah Password Akun <span>TERAS CHANNA</span></h1>
                 
                 
             </header>

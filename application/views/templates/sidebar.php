@@ -33,6 +33,7 @@
                 <li class="active"><a href="<?= base_url()?>">Home</a></li> |
                 <li><a href="#">Perawatan Ikan</a></li> |
                 <li><a href="handbags.html">Kontak Kami</a></li> |
+                <li><a href="handbags.html">Sejarah Kami</a></li> |
                 
             </ul>
         </div>

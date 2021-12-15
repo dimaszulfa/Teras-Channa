@@ -148,9 +148,16 @@
                 return FALSE;
         }
 
+        public function read_by($id)
+        {
+            $this->db->where('id', $id);
+            $query=$this->db->get('tbl_ikan');
+            return $query->row();
 
 
-    }
+         }
+        
+        }
 
 
 

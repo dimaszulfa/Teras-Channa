@@ -50,6 +50,7 @@
                     </div>
                     <div>
                     <label class="form-label" for="customFile">Gambar</label>
+                    <img style="width: 200px; height=200px;"src="<?=base_url().'uploads/'.$ikn->gambar?>" alt="" class="img-thumbnail mb-2 mx-50 mh-50">
                     <input type="file" class="form-control" id="gambar" name="gambar" value="<?=$ikn->gambar?>"/>   
                     <div style="color: red;"><?= form_error('gambar'); ?></div>
                   </div>    
