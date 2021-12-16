@@ -2,11 +2,12 @@
 <!-- start header -->
 <div class="header_bg">
 
- <?php if($this->session->userdata('usertype') == 'admin'){ ?>
+ <?php if($this->session->userdata('usertype') == 'pembeli'){ ?>
 <a class="active-icon c2 float-right" style="text-decoration:none;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"></a>  <?php }else{?>
     <?php }?>             
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" style="background-color:#4CCFC1; " href="#">Pengaturan Akun</a>
+    <a class="dropdown-item" style="background-color:#4CCFC1; " href="<?= site_url('otontefikasi/changedata')?>">Ubah Data</a>
+    <a class="dropdown-item" style="background-color:#4CCFC1; " href="<?= site_url('otontefikasi/changepassnokey')?>">Ubah Password</a>
     <a class="dropdown-item" style="background-color:#4CCFC1;" href="<?=base_url().'dashboard/pesanan'?>">Pesanan Saya</a>
     <a class="dropdown-item" style="background-color:#4CCFC1;" href="<?=base_url().'otontefikasi/logout'?>">Logout</a>
   </div>
