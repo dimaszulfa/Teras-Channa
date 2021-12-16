@@ -2,7 +2,7 @@
 <div class="main_bg1">
     <div class="wrap">
         <div class="main1">
-            <h2>featured products</h2>
+            <h2>Produk Unggulan</h2>
         </div>
     </div>
 </div>

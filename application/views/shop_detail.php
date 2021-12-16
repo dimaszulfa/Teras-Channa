@@ -39,7 +39,7 @@
 				    </div>
 				    <div class="product-image"> 
 				        <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" href="<?=base_url()?>assets/images/<?=$data->gambar?>" title="<?=$data->nama?>" alt="<?=$data->nama?>">
-				           	<img src="<?=base_url()?>uploads/<?=$data->gambar?>" alt="<?=$data->nama?>" title="<?=$data->nama?>" />
+				           	<img src="	<?=base_url()?>uploads/<?=$data->gambar?>" alt="<?=$data->nama?>" title="<?=$data->nama?>" />
 				        </a>
 				   </div>
 				
@@ -83,7 +83,7 @@
 							</li>
 						</ul>
 						<div class="btn_form">
-							<form>
+							<form method="post" action="<?= base_url('dashboard/tambah_keranjang/' . $data->id) ?>">
 								<input type="submit" value="Tambah ke keranjang" title="" />
 							</form>
 						</div>

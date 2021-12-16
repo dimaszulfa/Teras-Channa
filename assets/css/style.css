@@ -379,6 +379,14 @@ body {
 	vertical-align: middle;
 	margin-top: 2px;
 }
+.c2{
+	background: url(../images/setting.png) no-repeat 0px 0px;
+	width: 46px;
+	height: 46px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 2px;
+}
 .c1 i{
 	font-size: 2em;
 	color: #999999;

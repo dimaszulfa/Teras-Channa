@@ -69,6 +69,13 @@ class Dashboard extends CI_Controller{
         $this->load->view('templates/footer'); 
     }
 
+    public function pesanan(){
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pesanan_user');
+        $this->load->view('templates/footer'); 
+    }
+
 }
 
 ?>
