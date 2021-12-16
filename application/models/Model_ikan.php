@@ -4,6 +4,16 @@ class Model_ikan extends CI_Model {
     public function tampil_data(){
         return $this->db->get('tbl_ikan');
     }
+    public function tampil_cart($id){
+		$this->db->where('id_user',$id);
+		$query=$this->db->get('tbl_keranjang');
+		return $query;
+    }
+
+    public function hapus_cart($id){
+        $this->db->where('id_user',$id);
+        $this->db->delete('tbl_keranjang');
+    }
 
     public function tambah_ikan($data, $table){
         $this->db->insert($table, $data);
@@ -56,6 +66,21 @@ class Model_ikan extends CI_Model {
         } else{
             return array();
         }
+    }
+
+    public function addcart($data, $ikanid, $cartid){
+        if($ikanid){
+		$multiClause = array('id_ikan' => $ikanid, 'id_user' => $this->session->userdata('username'), 'id_keranjang' => $cartid);
+        $this->db->where($multiClause);
+        $this->db->update('tbl_keranjang', $data);  
+        }
+        else $this->db->insert('tbl_keranjang', $data);
+    }
+
+    public function getcartinfo($iduser, $idikan){
+        $multiClause = array('id_ikan' => $idikan, 'id_user' => $iduser);
+        $this->db->where($multiClause);
+		return $this->db->get('tbl_keranjang')->row();
     }
 
 }

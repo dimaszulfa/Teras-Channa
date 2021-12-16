@@ -18,9 +18,9 @@
 
                             <?php
                             $grand_total = 0;
-                            if ($keranjang = $this->cart->contents()) {
-                                foreach ($keranjang as $item) {
-                                    $grand_total = $grand_total + $item['subtotal'];
+                            if ($cart) {
+                                foreach ($cart as $item) {
+                                    $grand_total = $grand_total + ($item->price * $item->qty);
                                 }
                                 echo "Total Belanja Anda : Rp. " . number_format($grand_total, 0, ",", ".");
                             ?>
@@ -30,16 +30,16 @@
                     </div>
                     <form method="post" action="<?= base_url()?>dashboard/proses_pesanan"?>>
                             <div class="form-group">
-                                <label for="">Telepon Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap anda" class="form-control">
+                                <label for="">Nama Lengkap</label>
+                                <input type="text" name="nama" placeholder="Nama Lengkap anda" class="form-control" value="<?= $this->session->userdata('fullname')?>">
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat Lengkap</label>
-                                <input type="text" name="Alamat" placeholder="Alamat Lengkap anda" class="form-control">
+                                <input type="text" name="Alamat" placeholder="Alamat Lengkap anda" class="form-control" value="<?= $this->session->userdata('address')?>">
                             </div>
                             <div class="form-group">
                                 <label for="">No. Telepon </label>
-                                <input type="text" name="no_telp" placeholder="Nomor Telepon Anda" class="form-control">
+                                <input type="number" name="no_telp" placeholder="Nomor Telepon Anda" class="form-control"value="<?= $this->session->userdata('nohp')?>">
                             </div>
                             <div class="form-group">
                                 <label for="">Jasa Pengiriman</label>

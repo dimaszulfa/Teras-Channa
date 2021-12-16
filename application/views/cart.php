@@ -13,7 +13,7 @@
     <div class="main">
         <div class="container-fluid">
             <h4>Keranjang Belanja</h4>
-            <table class="table table-bordered table-striped table-hover">
+            <!-- <table class="table table-bordered table-striped table-hover">
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
@@ -34,6 +34,30 @@
                 <?php endforeach; ?>
                 <tr><td colspan="4"></td>
                     <td align="right">Rp. <?= number_format($this->cart->total()), 0, ',','.'?></td>
+                </tr>
+            </table> -->
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Sub-total</th>
+                </tr>
+                <?php
+                $no=0;
+                $sum=0;
+                foreach ($cart as $items) : ?>
+                <tr>
+                    <td><?= $no++?></td>
+                    <td><?=  $items->name?></td>
+                    <td><?=  $items->qty?></td>
+                    <td align="right">Rp. <?=number_format($items->price, 0, ',','.')?></td>
+                    <td align="right">Rp. <?= number_format($items->price * $items->qty, 0, ',','.')?></td>
+                </tr>
+                <?php $sum+=$items->price * $items->qty; endforeach; ?>
+                <tr><td colspan="4"></td>
+                    <td align="right">Rp. <?= number_format($sum), 0, ',','.'?></td>
                 </tr>
             </table>
             <div align="right">

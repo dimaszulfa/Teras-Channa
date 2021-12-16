@@ -66,7 +66,10 @@
         		"username"=>$login->username,
         		"usertype"=>$login->usertype,
         		"fullname"=>$login->fullname,
-                "email"=>$login->email
+                "email"=>$login->email,
+                "nohp"=>$login->nohp,
+                "address"=>$login->address,
+
         	);
         	$this->session->set_userdata($data);
         	if($login->usertype=="admin")redirect('admin/data_ikan'); 
@@ -163,8 +166,14 @@
                     'address' => $this->input->post('alamatsignup'),
                     'nohp' => $this->input->post('nohpsignup')
                 );
+                $data_session = array(
+                    'username' => $this->session->userdata('username'),
+                    'usertype' => $this->session->userdata('usertype'),
+                );
                 $this->load->model('Model_otontefikasi');
                 $this->Model_otontefikasi->changedata($data, $this->session->userdata('username'));
+                array_splice( $data, 3, 0, $data_session );
+                $this->session->set_userdata($data);
                 $this->session->set_flashdata('changedata','<p  style="color:green"; text-align:center; font-size:24px;>Data telah diubah </p>');
                 
             }
