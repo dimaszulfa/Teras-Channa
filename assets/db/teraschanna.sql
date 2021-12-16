@@ -42,11 +42,21 @@ REPLACE INTO `tbl_ikan` (`id`, `nama`, `famili`, `ukuran`, `berat`, `usia`, `har
 -- Dumping structure for table teras_channa.tbl_keranjang
 CREATE TABLE IF NOT EXISTS `tbl_keranjang` (
   `id_keranjang` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` varchar(50) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `id_ikan` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_keranjang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table teras_channa.tbl_keranjang: ~0 rows (approximately)
+-- Dumping data for table teras_channa.tbl_keranjang: ~4 rows (approximately)
 /*!40000 ALTER TABLE `tbl_keranjang` DISABLE KEYS */;
+REPLACE INTO `tbl_keranjang` (`id_keranjang`, `id_user`, `qty`, `price`, `name`, `id_ikan`) VALUES
+	(5, 'satrias', 1, 20000, 'Barcas', 13),
+	(6, 'satrias', 1, 20000, 'Aurantirytrty', 12),
+	(8, 'nataka', 4, 20000, 'Barcas', 13),
+	(12, 'nataka', 1, 20000, 'Aurantirytrty', 12);
 /*!40000 ALTER TABLE `tbl_keranjang` ENABLE KEYS */;
 
 -- Dumping structure for table teras_channa.tbl_pemesanan
@@ -86,14 +96,15 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table teras_channa.tbl_user: ~3 rows (approximately)
+-- Dumping data for table teras_channa.tbl_user: ~6 rows (approximately)
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
 REPLACE INTO `tbl_user` (`fullname`, `username`, `password`, `usertype`, `email`, `address`, `nohp`, `resetpass`) VALUES
 	('James Bond', 'jamesb', '1111', 'pembeli', 'james02@hotmail.com', 'Cikampek', '082119934561', NULL),
 	('Nataka Grasia', 'nataka', '$2y$10$jSRl0hJpzqoc5H1Kor6cI.D4YeAztk1t2X/.v0HgzmlgQkUjPsBe2', 'pembeli', 'NatakaG@yaohoo.com', 'Kota Jakarta Selatan Jl. Sejati Blok 532', '082344567890', NULL),
 	('satira blamtam', 'satria', '12345678', 'pembeli', 'saatirablam@hotmail.com', 'Kab. Bandung, Kec. Banjaran Desa banjaran', '085155679012', NULL),
+	('satira blamtamasd', 'satrias', '$2y$10$UZxWb7xELi1kf8VptTkq5u1QHVrpCawxx99rQF5h292NPql/Ks6Pm', 'pembeli', 'saatirablam@hotmail.com', 'Kab. Tiki land Bikini Bottom Blok 237', '022145642230', NULL),
 	('wildan kusnaedi', 'stigma', '$2y$10$MVlenE6eX8M/MF9y.pvOyekwwGxGWFZZLojW0fgfWzXDH8LQVJf6W', 'admin', 'wildank42@gmail.com', 'Cimaung', '085998541670', 'OR2wZX0cYBq6ogT1j9AS4rxIntVGLp7vDQUmsdFKkflHNhayMW'),
-	('wildan kusnaedi', 'wildan', '$2y$10$hU9EJ.nz0EngjP9Dy1qxIeckN/8jzE6MnUEnv1GHHxJl5gPzWh9J6', 'admin', 'wildank40@gmail.com', 'Kab. Bandung, Kec. Banjaran Desa Cimaung Sabelah', '082119901454', 'DCoe5vBgSrkmVxR0YZy3Jnb2O6iXMULa78fIA4KPhQ9GjcE1sd');
+	('wildan kusnaedi', 'wildan', '$2y$10$hU9EJ.nz0EngjP9Dy1qxIeckN/8jzE6MnUEnv1GHHxJl5gPzWh9J6', 'admin', 'wildank40@gmail.com', 'Kab. Bandung, Kec. Banjaran Desa Cimaung Sabelah', '082119901454', '0MV7at5QjTerpNAmPcISC6H8l2oYzZbK1nsODxvwh3XG4iLydk');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
