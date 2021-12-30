@@ -66,6 +66,8 @@
         		"username"=>$login->username,
         		"usertype"=>$login->usertype,
         		"fullname"=>$login->fullname,
+                "nohp"=>$login->nohp,
+                "address"=>$login->address,
                 "email"=>$login->email
         	);
         	$this->session->set_userdata($data);
@@ -103,6 +105,7 @@
     public function logout()
     {
     	$this->session->sess_destroy();
+        $this->destroy->cart();
     	redirect('Otontefikasi/login');
     }
     

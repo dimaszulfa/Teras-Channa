@@ -34,16 +34,16 @@
     </form>
                     <form method="post" action="<?=site_url()?>/snap/finish">
                         <div class="form-group">
-                            <label for="">Telepon Lengkap</label>
-                            <input type="text" name="nama" placeholder="Nama Lengkap anda" class="form-control">
+                            <label for="">Nama Lengkap</label>
+                            <input type="text" name="nama" placeholder="Nama Lengkap anda" class="form-control" value="<?= $this->session->userdata('fullname')?>">
                         </div>
                         <div class="form-group">
                             <label for="">Alamat Lengkap</label>
-                            <input type="text" name="alamat" placeholder="Alamat Lengkap anda" class="form-control">
+                            <input type="text" name="alamat" placeholder="Alamat Lengkap anda" class="form-control" value="<?= $this->session->userdata('address')?>">
                         </div>
                         <div class="form-group">
                             <label for="">No. Telepon </label>
-                            <input type="text" name="no_telp" placeholder="Nomor Telepon Anda" class="form-control">
+                            <input type="text" name="no_telp" placeholder="Nomor Telepon Anda" class="form-control" value="<?= $this->session->userdata('nohp')?>">
                         </div>
                         <div class="form-group">
                             <label for="">Jasa Pengiriman</label>

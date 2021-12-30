@@ -94,13 +94,22 @@ class Snap extends CI_Controller {
 		);
 
 		// Optional
+        $this->load->model('Model_otontefikasi');
+		$userdata=$this->Model_otontefikasi->getuser($this->session->userdata('username'));
 		$customer_details = array(
-		  'first_name'    => "Andri",
-		  'last_name'     => "Litani",
-		  'email'         => "andri@litani.com",
-		  'phone'         => "081122334455",
-		  'billing_address'  => $billing_address,
+		//   'first_name'    => "Andri",
+		//   'last_name'     => "Litani",
+		//   'email'         => "andri@litani.com",
+		//   'phone'         => "081122334455",
+		//   'billing_address'  => $billing_address,
+		//   'shipping_address' => $shipping_address
+		  'first_name'    => $userdata->fullname,
+		  'last_name'     => "",
+		  'email'         => $userdata->email,
+		  'phone'         => $userdata->nohp,
+		  'billing_address'  => $userdata->address,
 		  'shipping_address' => $shipping_address
+
 		);
 
 		// Data yang akan dikirim untuk request redirect_url.
