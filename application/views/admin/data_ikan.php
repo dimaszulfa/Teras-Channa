@@ -95,7 +95,7 @@
                       </thead>
                       <tbody>
                           
-                          <?php $no=1; foreach ($ikan as $fish) :?>
+                          <?php $no=1; foreach ($data->result() as $fish) :?>
                         <tr>
                           <td><?= $no++?></td>
                           <td><?=$fish->nama?></td>
@@ -117,6 +117,8 @@
               <?php endforeach; ?>
             </tbody>
           </table>
+          <?php echo $pagination; ?>
+
         </div>
       </div>
     </div>

@@ -26,6 +26,11 @@ class Model_ikan extends CI_Model {
         }
     }
 
+    function get_ikan_list($limit, $start){
+        $query = $this->db->get('tbl_ikan', $limit, $start);
+        return $query;
+    }
+
     public function delete_ikan($id){
         $verify=$this->read_by($id);
         if($verify->id == $id){
