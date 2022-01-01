@@ -12,10 +12,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumping data for table teras_channa.tbl_checkout: ~14 rows (approximately)
-DELETE FROM `tbl_checkout`;
+-- Dumping data for table teras_channa.tbl_checkout: ~18 rows (approximately)
 /*!40000 ALTER TABLE `tbl_checkout` DISABLE KEYS */;
-INSERT INTO `tbl_checkout` (`id`, `order_id`, `gross_amount`, `payment_type`, `bank`, `va_number`, `biller_code`, `transaction_status`, `transaction_time`, `pdf_url`, `date_created`, `date_modified`) VALUES
+REPLACE INTO `tbl_checkout` (`id`, `order_id`, `gross_amount`, `payment_type`, `bank`, `va_number`, `biller_code`, `transaction_status`, `transaction_time`, `pdf_url`, `date_created`, `date_modified`) VALUES
 	(1, 621737195, '684642', 'bank_transfer', 'bca', '01780576761', '', 'expire', '2021-12-12 22:27:52', 'https://app.sandbox.midtrans.com/snap/v1/transactions/a00cf60f-416b-448e-b96d-ef9a54926c69/pdf', 1639322873, 1639450408),
 	(2, 1318201693, '684642', 'bank_transfer', 'bca', '01780814901', '', 'expire', '2021-12-12 23:07:16', 'https://app.sandbox.midtrans.com/snap/v1/transactions/8ade0a5f-3028-43ee-9627-ac333896aa17/pdf', 1639325238, 1639449379),
 	(3, 1446355864, '684642', 'bank_transfer', 'bca', '01780503037', '', 'pending', '2021-12-12 23:18:54', 'https://app.sandbox.midtrans.com/snap/v1/transactions/fcc1d105-7de9-4146-8634-03c9fc47d849/pdf', 1639325935, 1639325935),
@@ -37,18 +36,16 @@ INSERT INTO `tbl_checkout` (`id`, `order_id`, `gross_amount`, `payment_type`, `b
 /*!40000 ALTER TABLE `tbl_checkout` ENABLE KEYS */;
 
 -- Dumping data for table teras_channa.tbl_ikan: ~3 rows (approximately)
-DELETE FROM `tbl_ikan`;
 /*!40000 ALTER TABLE `tbl_ikan` DISABLE KEYS */;
-INSERT INTO `tbl_ikan` (`id`, `nama`, `famili`, `ukuran`, `berat`, `usia`, `harga`, `stok`, `gambar`, `keterangan`) VALUES
+REPLACE INTO `tbl_ikan` (`id`, `nama`, `famili`, `ukuran`, `berat`, `usia`, `harga`, `stok`, `gambar`, `keterangan`) VALUES
 	(12, 'Aurantirytrty', 'asdf', 2, 2, 2, 20000, -1, 'Wildan_Kusnaedi_41155050180061_SOA_Tugas_21.png', 'qwertyuiop'),
 	(13, 'asdasd', 'dsfsd', 123, 312312, 312321, 312321, 312307, 'channa_example.jpg', '43543534534fdgdfgdfgfdg'),
 	(14, 'sdf', 'dsfsd', 123, 312312, 312321, 312321, 312310, 'channa_example2.jpg', '43543534534fdgdfgdfgfdg');
 /*!40000 ALTER TABLE `tbl_ikan` ENABLE KEYS */;
 
--- Dumping data for table teras_channa.tbl_invoice: ~8 rows (approximately)
-DELETE FROM `tbl_invoice`;
+-- Dumping data for table teras_channa.tbl_invoice: ~9 rows (approximately)
 /*!40000 ALTER TABLE `tbl_invoice` DISABLE KEYS */;
-INSERT INTO `tbl_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
+REPLACE INTO `tbl_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
 	(1, '213213123', NULL, '2021-12-11 20:20:56', '2021-12-12 20:20:56'),
 	(2, '213213123', NULL, '2021-12-11 20:21:18', '2021-12-12 20:21:18'),
 	(3, 'asfd21312', 'etet', '2021-12-11 20:22:10', '2021-12-12 20:22:10'),
@@ -61,19 +58,16 @@ INSERT INTO `tbl_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) V
 /*!40000 ALTER TABLE `tbl_invoice` ENABLE KEYS */;
 
 -- Dumping data for table teras_channa.tbl_keranjang: ~0 rows (approximately)
-DELETE FROM `tbl_keranjang`;
 /*!40000 ALTER TABLE `tbl_keranjang` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_keranjang` ENABLE KEYS */;
 
 -- Dumping data for table teras_channa.tbl_pemesanan: ~0 rows (approximately)
-DELETE FROM `tbl_pemesanan`;
 /*!40000 ALTER TABLE `tbl_pemesanan` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_pemesanan` ENABLE KEYS */;
 
--- Dumping data for table teras_channa.tbl_pesanan: ~13 rows (approximately)
-DELETE FROM `tbl_pesanan`;
+-- Dumping data for table teras_channa.tbl_pesanan: ~14 rows (approximately)
 /*!40000 ALTER TABLE `tbl_pesanan` DISABLE KEYS */;
-INSERT INTO `tbl_pesanan` (`id_pemesanan`, `id_invoice`, `id`, `nama`, `jumlah`, `harga`, `pilihan`) VALUES
+REPLACE INTO `tbl_pesanan` (`id_pemesanan`, `id_invoice`, `id`, `nama`, `jumlah`, `harga`, `pilihan`) VALUES
 	(1, 2, 12, 'Aurantirytrty', 2, 20000, NULL),
 	(2, 3, 12, 'Aurantirytrty', 1, 20000, NULL),
 	(3, 4, 13, 'sdf', 1, 312321, NULL),
@@ -91,14 +85,12 @@ INSERT INTO `tbl_pesanan` (`id_pemesanan`, `id_invoice`, `id`, `nama`, `jumlah`,
 /*!40000 ALTER TABLE `tbl_pesanan` ENABLE KEYS */;
 
 -- Dumping data for table teras_channa.tbl_transaksi: ~0 rows (approximately)
-DELETE FROM `tbl_transaksi`;
 /*!40000 ALTER TABLE `tbl_transaksi` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_transaksi` ENABLE KEYS */;
 
--- Dumping data for table teras_channa.tbl_user: ~6 rows (approximately)
-DELETE FROM `tbl_user`;
+-- Dumping data for table teras_channa.tbl_user: ~7 rows (approximately)
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` (`fullname`, `username`, `password`, `usertype`, `email`, `address`, `nohp`, `resetpass`) VALUES
+REPLACE INTO `tbl_user` (`fullname`, `username`, `password`, `usertype`, `email`, `address`, `nohp`, `resetpass`) VALUES
 	('James Bond', 'jamesb', '1111', 'pembeli', 'james02@hotmail.com', 'Cikampek', '082119934561', NULL),
 	('jester thomas', 'jesterthomas', '$2y$10$G8.NsQZTuua7VgRv1GaIlei/mDZVn3Z6YP1tUDuRj9B6gAMmT4/uu', 'pembeli', 'jest005@gmail.com', 'chicago kecamatan kidul desa gundul pacul rt 05 ew 005', '082112345678', NULL),
 	('Nataka Grasia', 'nataka', '$2y$10$jSRl0hJpzqoc5H1Kor6cI.D4YeAztk1t2X/.v0HgzmlgQkUjPsBe2', 'pembeli', 'NatakaG@yaohoo.com', 'Kota Jakarta Selatan Jl. Sejati Blok 532', '082344567890', NULL),
