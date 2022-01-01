@@ -105,7 +105,7 @@
     public function logout()
     {
     	$this->session->sess_destroy();
-        $this->destroy->cart();
+        // $this->destroy->cart();
     	redirect('Otontefikasi/login');
     }
     

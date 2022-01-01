@@ -53,7 +53,6 @@
                 <li><a href="#">Sejarah Kami</a></li> |
                 <li><a href="<?= base_url().'otontefikasi/login'?>">Masuk</a></li> |
                 <li><a href="<?= base_url().'otontefikasi/register'?>">Daftar</a></li> |
-                
             </ul>
         </div>
         <div class="top-nav">

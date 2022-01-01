@@ -81,21 +81,21 @@ class Snap extends CI_Controller {
 		  'phone'         => "081122334455",
 		  'country_code'  => 'IDN'
 		);
-
+		$this->load->model('Model_otontefikasi');
+		$userdata=$this->Model_otontefikasi->getuser($this->session->userdata('username'));
 		// Optional
 		$shipping_address = array(
-		  'first_name'    => "Obet",
-		  'last_name'     => "Supriadi",
-		  'address'       => "Manggis 90",
+		  'first_name'    => $userdata->fullname,
+		  'last_name'     => "",
+		  'address'       => "$userdata->address",
 		  'city'          => "Jakarta",
 		  'postal_code'   => "16601",
-		  'phone'         => "08113366345",
+		  'phone'         => $userdata->nohp,
 		  'country_code'  => 'IDN'
 		);
 
 		// Optional
-        $this->load->model('Model_otontefikasi');
-		$userdata=$this->Model_otontefikasi->getuser($this->session->userdata('username'));
+      
 		$customer_details = array(
 		//   'first_name'    => "Andri",
 		//   'last_name'     => "Litani",
@@ -140,7 +140,6 @@ class Snap extends CI_Controller {
 
     public function finish()
     {
-		$this->cart->destroy();
     	$result = json_decode($this->input->post('result_data'));
     	echo 'RESULT <br><pre>';
     	var_dump($result);
@@ -182,6 +181,8 @@ class Snap extends CI_Controller {
 		'date_modified' => time()
 	];
 		$this->db->insert('tbl_checkout', $dataInput);
+		$this->cart->destroy();
 
     }
+	
 }
