@@ -72,21 +72,21 @@ class Snap extends CI_Controller {
 		// $item_details = array ($item1_details);
 
 		// Optional
-		$billing_address = array(
-		  'first_name'    => "Andri",
-		  'last_name'     => "Litani",
-		  'address'       => "Mangga 20",
-		  'city'          => "Jakarta",
-		  'postal_code'   => "16602",
-		  'phone'         => "081122334455",
-		  'country_code'  => 'IDN'
-		);
+		// $billing_address = array(
+		//   'first_name'    => "Andri",
+		//   'last_name'     => "Litani",
+		//   'address'       => "Mangga 20",
+		//   'city'          => "Jakarta",
+		//   'postal_code'   => "16602",
+		//   'phone'         => "081122334455",
+		//   'country_code'  => 'IDN'
+		// );
 		$this->load->model('Model_otontefikasi');
 		$userdata=$this->Model_otontefikasi->getuser($this->session->userdata('username'));
 		// Optional
 		$shipping_address = array(
 		  'first_name'    => $userdata->fullname,
-		  'last_name'     => "",
+		//   'last_name'     => "",
 		  'address'       => "$userdata->address",
 		  'city'          => "Jakarta",
 		  'postal_code'   => "16601",
@@ -104,10 +104,10 @@ class Snap extends CI_Controller {
 		//   'billing_address'  => $billing_address,
 		//   'shipping_address' => $shipping_address
 		  'first_name'    => $userdata->fullname,
-		  'last_name'     => "",
+		//   'last_name'     => "",
 		  'email'         => $userdata->email,
 		  'phone'         => $userdata->nohp,
-		  'billing_address'  => $userdata->address,
+		//   'billing_address'  => $userdata->address,
 		  'shipping_address' => $shipping_address
 
 		);

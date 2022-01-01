@@ -11,7 +11,7 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Nama Pemesan</th>
+                          <th>Nama Pengguna</th>
                           <th>Alamat Pengiriman</th>
                           <th>Tanggal Pemesanan</th>
                           <th>Batas Pembayaran</th>

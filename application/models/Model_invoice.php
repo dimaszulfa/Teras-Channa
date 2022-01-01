@@ -3,9 +3,9 @@
 class Model_invoice extends CI_Model{
     public function index(){
         date_default_timezone_set('Asia/Jakarta');
-        $nama = $this->input->post('nama');
-        $alamat = $this->input->post('alamat');
-        $nama = $this->input->post('no_telp');
+        $nama = $this->session->userdata('username');
+        $alamat = $this->session->userdata('address');
+        
 
         $invoice = array(
             'nama' => $nama,
