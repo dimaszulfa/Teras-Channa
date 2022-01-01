@@ -12,6 +12,29 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Dumping database structure for teras_channa
+CREATE DATABASE IF NOT EXISTS `teras_channa` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `teras_channa`;
+
+-- Dumping structure for table teras_channa.tbl_checkout
+DROP TABLE IF EXISTS `tbl_checkout`;
+CREATE TABLE IF NOT EXISTS `tbl_checkout` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) NOT NULL DEFAULT 0,
+  `gross_amount` varchar(120) NOT NULL DEFAULT '0',
+  `payment_type` varchar(120) NOT NULL DEFAULT '0',
+  `bank` varchar(123) NOT NULL DEFAULT '0',
+  `va_number` varchar(123) NOT NULL DEFAULT '0',
+  `biller_code` varchar(123) NOT NULL DEFAULT '0',
+  `transaction_status` varchar(123) NOT NULL DEFAULT '0',
+  `transaction_time` varchar(123) NOT NULL DEFAULT '0',
+  `pdf_url` varchar(256) NOT NULL DEFAULT '0',
+  `date_created` int(11) NOT NULL DEFAULT 0,
+  `date_modified` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+
 -- Dumping data for table teras_channa.tbl_checkout: ~18 rows (approximately)
 /*!40000 ALTER TABLE `tbl_checkout` DISABLE KEYS */;
 REPLACE INTO `tbl_checkout` (`id`, `order_id`, `gross_amount`, `payment_type`, `bank`, `va_number`, `biller_code`, `transaction_status`, `transaction_time`, `pdf_url`, `date_created`, `date_modified`) VALUES
@@ -35,6 +58,22 @@ REPLACE INTO `tbl_checkout` (`id`, `order_id`, `gross_amount`, `payment_type`, `
 	(18, 1747023962, '644642', 'cstore', 'alfamart/indomart', '538992833424', '', 'settlement', '2021-12-30 14:22:07', 'https://app.sandbox.midtrans.com/snap/v1/transactions/ad63f28b-aa18-44ac-823a-40980d8fa282/pdf', 1640848938, 1640849040);
 /*!40000 ALTER TABLE `tbl_checkout` ENABLE KEYS */;
 
+-- Dumping structure for table teras_channa.tbl_ikan
+DROP TABLE IF EXISTS `tbl_ikan`;
+CREATE TABLE IF NOT EXISTS `tbl_ikan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(200) NOT NULL,
+  `famili` varchar(200) NOT NULL,
+  `ukuran` int(11) NOT NULL,
+  `berat` int(11) NOT NULL,
+  `usia` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `stok` int(11) NOT NULL,
+  `gambar` varchar(300) NOT NULL,
+  `keterangan` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+
 -- Dumping data for table teras_channa.tbl_ikan: ~3 rows (approximately)
 /*!40000 ALTER TABLE `tbl_ikan` DISABLE KEYS */;
 REPLACE INTO `tbl_ikan` (`id`, `nama`, `famili`, `ukuran`, `berat`, `usia`, `harga`, `stok`, `gambar`, `keterangan`) VALUES
@@ -42,6 +81,17 @@ REPLACE INTO `tbl_ikan` (`id`, `nama`, `famili`, `ukuran`, `berat`, `usia`, `har
 	(13, 'asdasd', 'dsfsd', 123, 312312, 312321, 312321, 312307, 'channa_example.jpg', '43543534534fdgdfgdfgfdg'),
 	(14, 'sdf', 'dsfsd', 123, 312312, 312321, 312321, 312310, 'channa_example2.jpg', '43543534534fdgdfgdfgfdg');
 /*!40000 ALTER TABLE `tbl_ikan` ENABLE KEYS */;
+
+-- Dumping structure for table teras_channa.tbl_invoice
+DROP TABLE IF EXISTS `tbl_invoice`;
+CREATE TABLE IF NOT EXISTS `tbl_invoice` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(56) DEFAULT NULL,
+  `alamat` varchar(225) DEFAULT NULL,
+  `tgl_pesan` datetime DEFAULT NULL,
+  `batas_bayar` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table teras_channa.tbl_invoice: ~9 rows (approximately)
 /*!40000 ALTER TABLE `tbl_invoice` DISABLE KEYS */;
@@ -57,13 +107,40 @@ REPLACE INTO `tbl_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) 
 	(9, NULL, NULL, '2021-12-30 14:22:18', '2021-12-31 14:22:18');
 /*!40000 ALTER TABLE `tbl_invoice` ENABLE KEYS */;
 
+-- Dumping structure for table teras_channa.tbl_keranjang
+DROP TABLE IF EXISTS `tbl_keranjang`;
+CREATE TABLE IF NOT EXISTS `tbl_keranjang` (
+  `id_keranjang` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id_keranjang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Dumping data for table teras_channa.tbl_keranjang: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tbl_keranjang` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_keranjang` ENABLE KEYS */;
 
+-- Dumping structure for table teras_channa.tbl_pemesanan
+DROP TABLE IF EXISTS `tbl_pemesanan`;
+CREATE TABLE IF NOT EXISTS `tbl_pemesanan` (
+  `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id_pemesanan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Dumping data for table teras_channa.tbl_pemesanan: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tbl_pemesanan` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_pemesanan` ENABLE KEYS */;
+
+-- Dumping structure for table teras_channa.tbl_pesanan
+DROP TABLE IF EXISTS `tbl_pesanan`;
+CREATE TABLE IF NOT EXISTS `tbl_pesanan` (
+  `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT,
+  `id_invoice` int(11) DEFAULT NULL,
+  `id` int(11) DEFAULT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `jumlah` int(3) DEFAULT NULL,
+  `harga` int(10) DEFAULT NULL,
+  `pilihan` text DEFAULT NULL,
+  PRIMARY KEY (`id_pemesanan`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table teras_channa.tbl_pesanan: ~14 rows (approximately)
 /*!40000 ALTER TABLE `tbl_pesanan` DISABLE KEYS */;
@@ -84,9 +161,34 @@ REPLACE INTO `tbl_pesanan` (`id_pemesanan`, `id_invoice`, `id`, `nama`, `jumlah`
 	(14, 9, 12, 'Aurantirytrty', 1, 20000, NULL);
 /*!40000 ALTER TABLE `tbl_pesanan` ENABLE KEYS */;
 
+-- Dumping structure for table teras_channa.tbl_transaksi
+DROP TABLE IF EXISTS `tbl_transaksi`;
+CREATE TABLE IF NOT EXISTS `tbl_transaksi` (
+  `id_transaksi` int(11) NOT NULL AUTO_INCREMENT,
+  `batas_waktu` date DEFAULT NULL,
+  `status_transaksi` date DEFAULT NULL,
+  `waktu_pemesanan` date DEFAULT NULL,
+  PRIMARY KEY (`id_transaksi`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Dumping data for table teras_channa.tbl_transaksi: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tbl_transaksi` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_transaksi` ENABLE KEYS */;
+
+-- Dumping structure for table teras_channa.tbl_user
+DROP TABLE IF EXISTS `tbl_user`;
+CREATE TABLE IF NOT EXISTS `tbl_user` (
+  `fullname` varchar(50) DEFAULT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `usertype` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `nohp` varchar(50) DEFAULT NULL,
+  `resetpass` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table teras_channa.tbl_user: ~7 rows (approximately)
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
@@ -99,6 +201,17 @@ REPLACE INTO `tbl_user` (`fullname`, `username`, `password`, `usertype`, `email`
 	('tester', 'tester', '$2y$10$Zzm.CVOjjWVFsXP4vcc06.0PRXfhM0.AncwZ73flnbExBqMC3b8qK', 'pembeli', 'tester@gmail.com', 'kfdskfdskfdksfkdsfkdskfsdkfdksfk', '088992833424', NULL),
 	('wildan kusnaedi', 'wildan', '$2y$10$Zzm.CVOjjWVFsXP4vcc06.0PRXfhM0.AncwZ73flnbExBqMC3b8qK', 'admin', 'wildank40@gmail.com', 'Kab. Bandung, Kec. Banjaran Desa Cimaung Sabelah', '082119901454', 'DCoe5vBgSrkmVxR0YZy3Jnb2O6iXMULa78fIA4KPhQ9GjcE1sd');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
+
+-- Dumping structure for trigger teras_channa.pesanan_penjualan
+DROP TRIGGER IF EXISTS `pesanan_penjualan`;
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+DELIMITER //
+CREATE TRIGGER `pesanan_penjualan` AFTER INSERT ON `tbl_pesanan` FOR EACH ROW BEGIN
+	UPDATE tbl_ikan SET stok = stok-NEW.jumlah
+	WHERE id = NEW.id;
+END//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
