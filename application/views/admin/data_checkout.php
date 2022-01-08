@@ -1,4 +1,16 @@
-
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Halaman Admin</title>
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="<?= base_url()?>assets/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/admin/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/admin/js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="<?= base_url()?>assets/admin/css/vertical-layout-light/style.css">
+</head>
 <div class="col grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -52,7 +64,9 @@
                         <td><?php echo $inv->transaction_time?></td>    
                         <td><div class="btn btn-primary"><a href="<?= $inv->pdf_url?>">Download</a></div></td>          
                         </tr>
+                        
                         <?php endforeach; ?>
+                        
                       </tbody>
                     </table>
                   </div>

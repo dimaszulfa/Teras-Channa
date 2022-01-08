@@ -80,6 +80,7 @@ class Dashboard extends CI_Controller{
         $gross = str_replace('.00','',$result->gross_amount);
         $dataInput = [
             'order_id' => $result->order_id,
+            'user' => $this->session->userdata('username'),
             'gross_amount' => $gross,
             'payment_type' => $result->payment_type,
             'bank' => $bank,

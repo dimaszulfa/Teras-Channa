@@ -5,6 +5,15 @@ class Data_checkout extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
+        $tipe = $this->session->userdata('usertype');
+        if (! $this->session->userdata('username')){
+            redirect('otontefikasi/login');
+        }
+        else if ($tipe =="pembeli")redirect('otontefikasi/login');
+        $this->load->library('pagination');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation'); 
+
         $params = array('server_key' => 'SB-Mid-server-PebvCjOCK9aBjk9S-NLL6duM', 'production' => false);
 		$this->load->library('veritrans');
 		$this->veritrans->config($params);
@@ -56,6 +65,23 @@ class Data_checkout extends CI_Controller{
     }
 
         redirect('admin/data_checkout');
+    }
+    function pdf()
+    {
+        // $this->load->view('admin/pdf');
+        $this->load->library('pdf');
+        $data['transaksi'] = $this->Model_checkout->transaksiberhasil();
+        $html = $this->load->view('admin/pdf', $data, true);
+        $this->pdf->createPDF($html, 'laporan_penjualan', false);
+    }
+    
+    function printpdf()
+    {
+        $this->load->library('pdf');
+        $data['checkout'] = $this->Model_checkout->transaksiberhasil();
+        $html = $this->load->view('admin/data_checkout', $data, true);
+        
+        $this->pdf->createPDF($html, 'mypdf', false);
     }
 
     
