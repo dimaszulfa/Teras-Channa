@@ -29,9 +29,15 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="data_checkout/pdf/">
+        <a class="nav-link" href="<?php echo site_url('admin/Data_checkout/pdf') ?>">
           <i class="icon-layout menu-icon"></i>
           <span class="menu-title">Download Transaksi</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('admin/Data_ikan/graph') ?>">
+          <i class="icon-layout menu-icon"></i>
+          <span class="menu-title">Grafis Penjualan</span>
         </a>
       </li>
     </ul>

@@ -75,14 +75,7 @@ class Data_checkout extends CI_Controller{
         $this->pdf->createPDF($html, 'laporan_penjualan', false);
     }
     
-    function printpdf()
-    {
-        $this->load->library('pdf');
-        $data['checkout'] = $this->Model_checkout->transaksiberhasil();
-        $html = $this->load->view('admin/data_checkout', $data, true);
-        
-        $this->pdf->createPDF($html, 'mypdf', false);
-    }
+    
 
     
 }
