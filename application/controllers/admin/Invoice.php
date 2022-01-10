@@ -21,6 +21,21 @@ class Invoice extends CI_Controller{
         $this->load->view('templates_admin/footer');
     }
 
+    function print($id_invoice)
+    {
+        // $this->load->view('admin/pdf');
+        $this->load->library('pdf');
+        $data['invoice'] = $this->Model_invoice->ambil_id_invoice($id_invoice);
+        $data['pesanan'] = $this->Model_invoice->ambil_id_pesanan($id_invoice);
+        $html = $this->load->view('admin/invoicepdf', $data, true);
+        $this->pdf->createPDF($html, 'Invoice', false);
+       // $this->load->view('admin/invoicepdf');
+    }
+
+
+    
+
+
 }
 
 

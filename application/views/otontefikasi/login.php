@@ -49,13 +49,19 @@
                                 <p class="keeplogin"> 
                                     <a href="resetpass" class="">Reset Password</a>
 								</p>
+                                <p>
+                                
+                                </p>
                                 <p class="login button"> 
+                                <a  href="<?php echo base_url()?>" class="">kembali</a>
                                     <input type="submit" value="Login" name="login"/> 
 								</p>
                                 <p class="change_link">
 									Belum terdaftar ?
 									<a href="#toregister" class="to_register">Register</a>
 								</p>
+                                
+                                
                             </form>
                         </div>
                         <div id="register" class="animate form">

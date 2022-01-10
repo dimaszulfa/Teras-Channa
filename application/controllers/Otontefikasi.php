@@ -71,7 +71,7 @@
                 "email"=>$login->email
         	);
         	$this->session->set_userdata($data);
-        	if($login->usertype=="admin")redirect('admin/data_ikan'); 
+        	if($login->usertype=="admin")redirect('admin/Dashboard_admin/index'); 
         	else if($login->usertype=="pembeli")redirect('Dashboard'); 
         	}
         }
