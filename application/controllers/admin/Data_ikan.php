@@ -102,7 +102,8 @@
                 );
                 $this->load->model('model_ikan');
                 $this->model_ikan->tambah_ikan($data, 'tbl_ikan');
-                
+                $this->session->set_flashdata('msg','ditambahkan');
+
                 redirect('admin/data_ikan/index');
             }
             else {
@@ -155,7 +156,8 @@
                 );
                 $this->load->model('model_ikan');
                 $this->model_ikan->update_ikan($id, $data);
-                
+                $this->session->set_flashdata('msg','Diubah');
+
                 redirect('admin/data_ikan/index');
     
             }
@@ -196,6 +198,8 @@
 
          }
         
+
+         
         }
 
 

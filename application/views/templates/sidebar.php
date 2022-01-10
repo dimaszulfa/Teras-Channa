@@ -32,12 +32,7 @@
         <!-- </ul> -->
         </div>
 
-        <div class="h_search">
-            <form>
-                <input type="text" value="">
-                <input type="submit" value="">
-            </form>
-        </div>
+
         <div class="clear"></div>
     </div>
 </div>
@@ -48,11 +43,13 @@
         <div class="h_menu">
             <ul>
                 <li class="active"><a href="<?= base_url()?>">Home</a></li> |
-                <li><a href="#">Perawatan Ikan</a></li> |
+                <li><a href="<?=base_url().'Informasi/index'?>">Informasi Ikan Channa</a></li> |
                 <li><a href="#">Kontak Kami</a></li> |
                 <li><a href="#">Sejarah Kami</a></li> |
+                <?php if(!$this->session->userdata('usertype')) { ?>
                 <li><a href="<?= base_url().'otontefikasi/login'?>">Masuk</a></li> |
                 <li><a href="<?= base_url().'otontefikasi/register'?>">Daftar</a></li> |
+                <?php } ?>
             </ul>
         </div>
         <div class="top-nav">

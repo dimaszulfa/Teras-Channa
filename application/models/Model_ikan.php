@@ -5,6 +5,18 @@ class Model_ikan extends CI_Model {
         return $this->db->get('tbl_ikan');
     }
 
+    public function search($keyword){
+        $this->db->like('nama', $keyword);
+        $this->db->or_like('famili', $keyword);
+        $this->db->or_like('usia', $keyword);
+        $this->db->or_like('harga', $keyword);
+        $this->db->or_like('ukuran', $keyword);
+        
+        $result = $this->db->get('tbl_ikan')->result(); // Tampilkan data siswa berdasarkan keyword
+        
+        return $result; 
+      }
+
     public function tambah_ikan($data, $table){
         $this->db->insert($table, $data);
     }

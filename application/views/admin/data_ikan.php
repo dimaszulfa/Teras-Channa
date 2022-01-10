@@ -20,7 +20,7 @@
       <div class="form-group">
         <label for="exampleInputUsername1">Nama</label>
         <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Ikan" >
-        <div style="color: red;"><?= form_error('nama'); ?></div>
+          <div style="color: red;"><?= form_error('nama'); ?></div>
       </div>
       <div class="form-group">
         <label for="exampleInputUsername1">Famili</label>
@@ -70,10 +70,15 @@
           <div class="mt-4 row">
             
           <div class="col-lg-12 grid-margin stretch-card">
+            
               <div class="card">
                 <div class="card-body">
+                  
                 <div style="color: red;"><?php echo validation_errors(); ?></div>
+                
                   <h4 class="card-title">Data Ikan Channa</h4>
+      
+                  <div class="flash-data" data-flashdata="<?=$this->session->flashdata('msg')?>"></div>
                   <p class="card-description">
                   </p>
                   <div class="table-responsive">
@@ -83,8 +88,8 @@
                           <th>No</th>
                           <th>Nama</th>
                           <th>Famili</th>
-                          <th>Ukuran</th>
-                          <th>Berat</th>
+                          <th>Ukuran(cm)</th>
+                          <th>Berat(kg)</th>
                           <th>Usia</th>
                           <th>Harga</th>
                           <th>Stok</th>
@@ -103,15 +108,15 @@
                           <td><?=$fish->ukuran?></td>
                           <td><?=$fish->berat?></td>
                           <td><?=$fish->usia?></td>
-                          <td><?=$fish->harga?></td>
+                          <td>Rp<?=number_format($fish->harga, 2, ',', '.')?></td>
                           <td><?=$fish->stok?></td>
                           <th><img src="<?=base_url('uploads/'.$fish->gambar)?>" style="width:100px;height:100px;" /></th>
                           <td><?=$fish->keterangan?></td>
                           <td><center>
-                          <button type="button" class="btn btn-info" id="edit" value="Edit" ><b><a style="color:white" href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data</a></b></button>
+                          <button type="button" class="btn btn-info" id="edit" value="Edit" ><b><a style="color:white"  href="<?= site_url('admin/data_ikan/edit/'.$fish->id)?>">Update Data</a></b></button>
                 <button type="button"
-                onclick="return confirm('Yakin Mau dihapus data yang dipilih?')"
-                class="btn btn-danger"><b><a style="color:white" href="<?= site_url('admin/data_ikan/delete/'.$fish->id)?>">Delete</a></b></button></center>
+                
+                class="btn btn-danger"><b><a style="color:white" class="tombol-hapus" href="<?= site_url('admin/data_ikan/delete/'.$fish->id)?>">Delete</a></b></button></center>
               </td>
               </tr>
               <?php endforeach; ?>

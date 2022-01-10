@@ -25,7 +25,7 @@
                         </button> -->
                         <div class="price">
                             <h4>
-                                <span style="background-color: #007BFF;">Beli</span>
+                                <!-- <span style="background-color: #007BFF;">Beli</span> -->
                                 <span style="background-color:#3CC395"><a style="text-decoration:none; color:white" href="<?= base_url('dashboard/tambah_keranjang/' . $ikan->id) ?>"> Keranjang</a></span>
                             </h4>
                         </div>

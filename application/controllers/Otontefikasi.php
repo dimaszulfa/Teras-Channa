@@ -63,7 +63,7 @@
         if ($login != NULL){
         	if(password_verify($this->input->post('password'), $login->password)){
         	$data=array(
-        		"username"=>$login->username,
+        		"username"=>$login->username, 
         		"usertype"=>$login->usertype,
         		"fullname"=>$login->fullname,
                 "nohp"=>$login->nohp,

@@ -15,7 +15,7 @@
                   <form method="post" class="forms-sample" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputNama1">Nama</span></label>
-                      <input type="text" value="<?=$ikn->nama?>" name="nama" class="<?= form_error('nama') ? 'invalid' : '' ?>" id="nama" placeholder="Nama">
+                      <input type="text" value="<?=$ikn->nama?>" name="nama" class="form-control <?= form_error('nama') ? 'invalid' : '' ?>" id="nama" placeholder="Nama">
                       <div style="color: red;"><?= form_error('nama'); ?></div>
                     </div>
                     <div class="form-group">
@@ -60,6 +60,7 @@
                       <div style="color: red;"><?= form_error('keterangan'); ?></div>
                     </div>
                     <center><input type="submit" class="btn btn-primary mr-2" name="submit">
+                   <a href="<?=site_url('admin/data_ikan')?>"> <input type="button" class="btn btn-danger mr-2" value="Cancel"></a></input></center>
                   </form>
                   <?php endforeach;?>
                 </div>
