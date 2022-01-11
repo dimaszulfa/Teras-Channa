@@ -189,6 +189,15 @@
                 return FALSE;
         }
 
+        public function graph(){
+            $data['graph'] = $this->Model_checkout->data_graph();
+            $this->load->view('templates_admin/header');
+            $this->load->view('templates_admin/top_bar');
+            $this->load->view('templates_admin/sidebar');
+            $this->load->view('admin/graph', $data);
+            $this->load->view('templates_admin/footer');
+        }
+
         public function read_by($id)
         {
             $this->db->where('id', $id);

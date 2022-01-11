@@ -49,10 +49,14 @@ class Model_ikan extends CI_Model {
         unlink('./uploads/'.$verify->gambar);
         $this->db->where('id',$id);
         $this->db->delete('tbl_ikan');
+        $this->db->where('id_ikan',$id);
+        $this->db->delete('tbl_graph');
         }
         else {
         $this->db->where('id',$id);
         $this->db->delete('tbl_ikan');    
+        $this->db->where('id_ikan',$id);
+        $this->db->delete('tbl_graph');
         }
      
     }

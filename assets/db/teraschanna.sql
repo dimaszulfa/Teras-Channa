@@ -33,9 +33,9 @@ CREATE TABLE IF NOT EXISTS `tbl_checkout` (
   `date_created` int(11) NOT NULL DEFAULT 0,
   `date_modified` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table teras_channa.tbl_checkout: ~22 rows (approximately)
+-- Dumping data for table teras_channa.tbl_checkout: ~25 rows (approximately)
 /*!40000 ALTER TABLE `tbl_checkout` DISABLE KEYS */;
 REPLACE INTO `tbl_checkout` (`id`, `user`, `order_id`, `gross_amount`, `payment_type`, `bank`, `va_number`, `biller_code`, `transaction_status`, `transaction_time`, `pdf_url`, `date_created`, `date_modified`) VALUES
 	(1, '0', 621737195, '684642', 'bank_transfer', 'bca', '01780576761', '', 'expire', '2021-12-12 22:27:52', 'https://app.sandbox.midtrans.com/snap/v1/transactions/a00cf60f-416b-448e-b96d-ef9a54926c69/pdf', 1639322873, 1639450408),
@@ -61,8 +61,26 @@ REPLACE INTO `tbl_checkout` (`id`, `user`, `order_id`, `gross_amount`, `payment_
 	(21, '0', 315113431, '312321', 'cstore', 'alfamart/indomart', '1433890384586880', '', 'pending', '2022-01-01 15:41:10', 'https://app.sandbox.midtrans.com/snap/v1/transactions/c180480f-e11c-4367-8244-d7d5c2c4631d/pdf', 1641026439, 1641026439),
 	(22, '0', 861480500, '312321', 'bank_transfer', 'bca', '01780137448', '', 'pending', '2022-01-01 15:43:49', 'https://app.sandbox.midtrans.com/snap/v1/transactions/c4c1d75d-3eb5-4b45-a4d2-c70505f795bc/pdf', 1641026598, 1641026598),
 	(23, 'jesterthomas', 1060410233, '624642', 'cstore', 'alfamart/indomart', '138992833424', '', 'settlement', '2022-01-01 15:46:38', 'https://app.sandbox.midtrans.com/snap/v1/transactions/5fe563bf-26e9-4fa4-9c82-4dd1157d0294/pdf', 1641026766, 1641027383),
-	(24, 'jesterthomas', 2034331643, '624642', 'bank_transfer', 'bni', '9880178074124116', '', 'pending', '2022-01-08 10:06:25', 'https://app.sandbox.midtrans.com/snap/v1/transactions/e6b8ce9d-7a3b-4aa8-b6ea-919288e6cdb5/pdf', 1641611182, 1641611182);
+	(24, 'jesterthomas', 2034331643, '624642', 'bank_transfer', 'bni', '9880178074124116', '', 'pending', '2022-01-08 10:06:25', 'https://app.sandbox.midtrans.com/snap/v1/transactions/e6b8ce9d-7a3b-4aa8-b6ea-919288e6cdb5/pdf', 1641611182, 1641611182),
+	(25, 'jesterthomas', 1012202989, '644642', 'cstore', 'alfamart/indomart', '902112345678', '', 'pending', '2022-01-08 11:03:47', 'https://app.sandbox.midtrans.com/snap/v1/transactions/2944e456-ecfb-425a-9556-c99cfe4d2724/pdf', 1641614623, 1641614623);
 /*!40000 ALTER TABLE `tbl_checkout` ENABLE KEYS */;
+
+-- Dumping structure for table teras_channa.tbl_graph
+CREATE TABLE IF NOT EXISTS `tbl_graph` (
+  `id_ikan` int(11) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_ikan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table teras_channa.tbl_graph: ~2 rows (approximately)
+/*!40000 ALTER TABLE `tbl_graph` DISABLE KEYS */;
+REPLACE INTO `tbl_graph` (`id_ikan`, `nama`, `jumlah`) VALUES
+	(12, 'Aurantirytrty', 25),
+	(13, 'asdasd', 2),
+	(14, 'sdf', 5),
+	(18, 'jdfgioq', 10);
+/*!40000 ALTER TABLE `tbl_graph` ENABLE KEYS */;
 
 -- Dumping structure for table teras_channa.tbl_ikan
 CREATE TABLE IF NOT EXISTS `tbl_ikan` (
@@ -77,14 +95,15 @@ CREATE TABLE IF NOT EXISTS `tbl_ikan` (
   `gambar` varchar(300) NOT NULL,
   `keterangan` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table teras_channa.tbl_ikan: ~3 rows (approximately)
+-- Dumping data for table teras_channa.tbl_ikan: ~4 rows (approximately)
 /*!40000 ALTER TABLE `tbl_ikan` DISABLE KEYS */;
 REPLACE INTO `tbl_ikan` (`id`, `nama`, `famili`, `ukuran`, `berat`, `usia`, `harga`, `stok`, `gambar`, `keterangan`) VALUES
-	(12, 'Aurantirytrty', 'asdf', 2, 2, 2, 20000, -2, 'Wildan_Kusnaedi_41155050180061_SOA_Tugas_21.png', 'qwertyuiop'),
-	(13, 'asdasd', 'dsfsd', 123, 312312, 312321, 312321, 312304, 'channa_example.jpg', '43543534534fdgdfgdfgfdg'),
-	(14, 'sdf', 'dsfsd', 123, 312312, 312321, 312321, 312306, 'channa_example2.jpg', '43543534534fdgdfgdfgfdg');
+	(12, 'Aurantirytrty', 'asdf', 2, 2, 2, 20000, -3, 'Wildan_Kusnaedi_41155050180061_SOA_Tugas_21.png', 'qwertyuiop'),
+	(13, 'asdasd', 'aur', 0, 0, 0, 0, -2, '', ''),
+	(14, 'sdf', 'dsfsd', 123, 312312, 312321, 312321, 312305, 'channa_example2.jpg', '43543534534fdgdfgdfgfdg'),
+	(18, 'jdfgioq', 'jafs', 2, 2, 21, 12, 4, 'asdkl', 'm,lxfs');
 /*!40000 ALTER TABLE `tbl_ikan` ENABLE KEYS */;
 
 -- Dumping structure for table teras_channa.tbl_invoice
@@ -95,15 +114,16 @@ CREATE TABLE IF NOT EXISTS `tbl_invoice` (
   `tgl_pesan` datetime DEFAULT NULL,
   `batas_bayar` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table teras_channa.tbl_invoice: ~2 rows (approximately)
+-- Dumping data for table teras_channa.tbl_invoice: ~5 rows (approximately)
 /*!40000 ALTER TABLE `tbl_invoice` DISABLE KEYS */;
 REPLACE INTO `tbl_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
 	(12, NULL, NULL, '2022-01-01 15:40:39', '2022-01-02 15:40:39'),
 	(13, 'tester', NULL, '2022-01-01 15:43:18', '2022-01-02 15:43:18'),
 	(14, 'tester', 'kfdskfdskfdksfkdsfkdskfsdkfdksfk', '2022-01-01 15:46:06', '2022-01-02 15:46:06'),
-	(15, 'jesterthomas', 'chicago kecamatan kidul desa gundul pacul rt 05 ew 005', '2022-01-08 10:06:22', '2022-01-09 10:06:22');
+	(15, 'jesterthomas', 'chicago kecamatan kidul desa gundul pacul rt 05 ew 005', '2022-01-08 10:06:22', '2022-01-09 10:06:22'),
+	(16, 'jesterthomas', 'chicago kecamatan kidul desa gundul pacul rt 05 ew 005', '2022-01-08 11:03:43', '2022-01-09 11:03:43');
 /*!40000 ALTER TABLE `tbl_invoice` ENABLE KEYS */;
 
 -- Dumping structure for table teras_channa.tbl_keranjang
@@ -126,9 +146,9 @@ CREATE TABLE IF NOT EXISTS `tbl_pesanan` (
   `harga` int(10) DEFAULT NULL,
   `pilihan` text DEFAULT NULL,
   PRIMARY KEY (`id_pemesanan`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table teras_channa.tbl_pesanan: ~4 rows (approximately)
+-- Dumping data for table teras_channa.tbl_pesanan: ~8 rows (approximately)
 /*!40000 ALTER TABLE `tbl_pesanan` DISABLE KEYS */;
 REPLACE INTO `tbl_pesanan` (`id_pemesanan`, `id_invoice`, `id`, `nama`, `jumlah`, `harga`, `pilihan`) VALUES
 	(17, 12, 13, 'asdasd', 1, 312321, NULL),
@@ -136,7 +156,11 @@ REPLACE INTO `tbl_pesanan` (`id_pemesanan`, `id_invoice`, `id`, `nama`, `jumlah`
 	(19, 14, 14, 'sdf', 1, 312321, NULL),
 	(20, 14, 13, 'asdasd', 1, 312321, NULL),
 	(21, 15, 13, 'asdasd', 1, 312321, NULL),
-	(22, 15, 14, 'sdf', 1, 312321, NULL);
+	(22, 15, 14, 'sdf', 1, 312321, NULL),
+	(23, 16, 12, 'Aurantirytrty', 1, 20000, NULL),
+	(24, 16, 13, 'asdasd', 1, 312321, NULL),
+	(25, 16, 14, 'sdf', 1, 312321, NULL),
+	(26, 13, 13, 'asdasd', 2, 312321, NULL);
 /*!40000 ALTER TABLE `tbl_pesanan` ENABLE KEYS */;
 
 -- Dumping structure for table teras_channa.tbl_user
@@ -165,12 +189,23 @@ REPLACE INTO `tbl_user` (`fullname`, `username`, `password`, `usertype`, `email`
 	('wildan kusnaedi', 'wildan', '$2y$10$Zzm.CVOjjWVFsXP4vcc06.0PRXfhM0.AncwZ73flnbExBqMC3b8qK', 'admin', 'wildank40@gmail.com', 'Kab. Bandung, Kec. Banjaran Desa Cimaung Sabelah', '082119901454', 'DCoe5vBgSrkmVxR0YZy3Jnb2O6iXMULa78fIA4KPhQ9GjcE1sd');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 
+-- Dumping structure for trigger teras_channa.graph_ikan
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `graph_ikan` AFTER INSERT ON `tbl_ikan` FOR EACH ROW BEGIN
+INSERT INTO `teras_channa`.`tbl_graph` (`id_ikan`,`nama`, `jumlah`) VALUES (NEW.id, NEW.nama, 0);
+END//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
+
 -- Dumping structure for trigger teras_channa.pesanan_penjualan
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
 CREATE TRIGGER `pesanan_penjualan` AFTER INSERT ON `tbl_pesanan` FOR EACH ROW BEGIN
 	UPDATE tbl_ikan SET stok = stok-NEW.jumlah
 	WHERE id = NEW.id;
+	UPDATE tbl_graph SET jumlah = jumlah+NEW.jumlah
+	WHERE id_ikan = NEW.id;
 END//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;

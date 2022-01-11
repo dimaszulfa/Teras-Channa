@@ -57,6 +57,11 @@ return TRUE;
                 return false;
             }
         }
+        // public function invoice(){
+        //     $this->db->select('tbl_invoice.*,tbl_pesanan.*')->from('tbl_invoice');
+        // $this->db->join('tbl_pesanan','tbl_pesanan.id_invoice=tbl_invoice.id');
+        // return $this->db->get()->result();
+        // }
 }
 
 ?>

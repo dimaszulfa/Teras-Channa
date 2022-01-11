@@ -1,15 +1,25 @@
-
-<div class="col-lg-10 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Detail Pemesanan <div class="btn-success">No. Invoice: <?= $invoice->id?></div></h4>
-             
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <title>Download Invoice</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<h1 class="text-center bg-info">Data Invoice</h1>
+<center>
+    <h4 class="card-title"><div class="btn-success">No. Invoice: <?= $invoice->id?></div></h4>
+    <h6>Nama Lengkap : <?= $invoice->nama?></h6>
+    <h6>Alamat : <?= $invoice->alamat?></h6>
+    <h6>Status Transaksi : <?= $invoice->tgl_pesan?></h6>
+</center>
+<table class="table table-striped table-hover">
+    
+<thead>
                         <tr>
                           <th>No</th>
-                          <th>Nama</th>
+                          <th>Nama Ikan</th>
                           <th>Jumlah</th>
                           <th>Harga satuan</th>
                           <th>Sub-total</th>
@@ -27,13 +37,9 @@
                         <?php endforeach; ?>
                         <tr>
                             <td colspan="4" align="right">Grand Total</td>
-                            <td align="right">Rp. <?= number_format($total,0,',','.')?></td>
+                            <td align="left">Rp. <?= number_format($total,0,',','.')?></td>
                         </tr>
                       </tbody>
                     </table>
-                    <a href="<?=base_url().'admin/invoice/index'?>"><div class="btn btn-primary">Kembali</div></a>
-                  </div>
-                </div>
-              </div>
-              </div>
-              </div>
+</body>
+</html>

@@ -13,6 +13,16 @@ class Model_checkout extends CI_Model{
        
     }
 
+    public function data_graph(){
+        $data = $this->db->get('tbl_graph');
+        if ($data->num_rows()>0){
+            return $data->result();
+        } else{
+            return false;
+        }
+        
+     }
+
     public function transaksiberhasil(){
         $this->db->select('tbl_checkout.*,tbl_user.*')->from('tbl_checkout');
     $this->db->join('tbl_user','tbl_user.username=tbl_checkout.user');
