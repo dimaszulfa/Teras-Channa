@@ -53,7 +53,7 @@
                                 
                                 </p>
                                 <p class="login button"> 
-                                <a  href="<?php echo base_url()?>" class="">kembali</a>
+                                <a href="<?php echo base_url()?>"><input type="button" value="Kembali" class=""></a>
                                     <input type="submit" value="Login" name="login"/> 
 								</p>
                                 <p class="change_link">

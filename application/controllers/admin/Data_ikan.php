@@ -194,7 +194,7 @@
             $this->load->view('templates_admin/header');
             $this->load->view('templates_admin/top_bar');
             $this->load->view('templates_admin/sidebar');
-            $this->load->view('admin/graph', $data);
+            $this->load->view('admin/Dashboard_admin', $data);
             $this->load->view('templates_admin/footer');
         }
 

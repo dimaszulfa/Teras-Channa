@@ -22,7 +22,7 @@
                     <th>Sub-total</th>
                 </tr>
                 <?php
-                $no=0;
+                $no=1;
                 foreach ($this->cart->contents() as $items) : ?>
                 <tr>
                     <td><?= $no++?></td>

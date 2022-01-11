@@ -52,36 +52,10 @@
 			<div class="span1_of_1_des">
 				  <div class="desc1">
 					<h3><?=$data->nama?></h3>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+					<p><?=$data->keterangan?></p>
 					<h5>Rp. <?=number_format($data->harga,0,",",".")?></h5>
 					<div class="available">
-						<h4>Opsi :</h4>
-						<ul>
-							<li>Color:
-								<select>
-								<option>Silver</option>
-								<option>Black</option>
-								<option>Dark Black</option>
-								<option>Red</option>
-							</select></li>
-							<li>Size:
-								<select>
-									<option>L</option>
-									<option>XL</option>
-									<option>S</option>
-									<option>M</option>
-								</select>
-							</li>
-							<li>Quality:
-								<select>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</li>
-						</ul>
+				
 						<div class="btn_form">
 							<form method="post" action="<?= base_url('dashboard/tambah_keranjang/' . $data->id) ?>">
 								<input type="submit" value="Tambah ke keranjang" title="" />
@@ -92,7 +66,7 @@
 					</div>
 					<div class="share-desc">
 						<div class="share">
-							<h4>Share Product :</h4>
+							<h4>Bagikan :</h4>
 							<ul class="share_nav">
 								<li><a href="#"><img src="<?=base_url()?>assets/images/facebook.png" title="facebook"></a></li>
 								<li><a href="#"><img src="<?=base_url()?>assets/images/twitter.png" title="Twiiter"></a></li>
@@ -109,12 +83,8 @@
 				   	<section class="tabs">
 		            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked">
 			        <label for="tab-1" class="tab-label-1">Keterangan</label>
-			
-		            <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2">
-			        <label for="tab-2" class="tab-label-2">consumer</label>
-			
-		            <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3">
-			        <label for="tab-3" class="tab-label-3">semiconductor</label>
+					
+		            
 	          
 				    <div class="clear-shadow"></div>
 					
@@ -122,35 +92,15 @@
 				        <div class="content-1">
 				        	<p class="para top"><?=$data->keterangan?></p>
 							<ul>
-								<li>Research</li>
-								<li>Design and Development</li>
-								<li>Porting and Optimization</li>
-								<li>System integration</li>
-								<li>Verification, Validation and Testing</li>
-								<li>Maintenance and Support</li>
+							<li>Jenis : <?=$data->famili?></li>
+							<li>Ukuran : <?=$data->ukuran?> cm</li>
+							<li>Berat : <?=$data->berat?> kg</li>
+							<li>Usia : <?=$data->usia?> bulan</li>
+							<li>Stok : <?=$data->stok?></li>
 							</ul>
 							<div class="clear"></div>
 						</div>
-				        <div class="content-2">
-							<p class="para"><span>WELCOME </span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-							<ul class="qua_nav">
-								<li>Multimedia Systems</li>
-								<li>Digital media adapters</li>
-								<li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>
-							</ul>
-						</div>
-				        <div class="content-3">
-				        	<p class="para top"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-							<ul>
-								<li>Research</li>
-								<li>Design and Development</li>
-								<li>Porting and Optimization</li>
-								<li>System integration</li>
-								<li>Verification, Validation and Testing</li>
-								<li>Maintenance and Support</li>
-							</ul>
-							<div class="clear"></div>
-						</div>
+				      
 			        </div>
 			        </section>
 		         	<!-- end tabs -->

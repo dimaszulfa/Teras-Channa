@@ -45,11 +45,12 @@ class Data_checkout extends CI_Controller{
        if($result->status_message == 'Success, transaction is found'){
         $dataupdate = [
             'transaction_status' => $result->transaction_status,
-            'date_modified' => time()
+            // 'date_modified' => time()
         ];
 
 
         $update = $this->Model_checkout->update($dataupdate,$orderid);
+        $update = $this->Model_checkout->update_invoice($dataupdate,$orderid);
 
 
         if($update>0){

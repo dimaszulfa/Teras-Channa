@@ -29,6 +29,30 @@
           </ul>
         </div>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('admin/data_ikan')?>">
+          <i class="icon-layout menu-icon"></i>
+          <span class="menu-title">Data Ikan</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('admin/Data_checkout')?>">
+          <i class="icon-layout menu-icon"></i>
+          <span class="menu-title">Data Checkout</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('admin/invoice') ?>">
+          <i class="icon-layout menu-icon"></i>
+          <span class="menu-title">Data Penjualan</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('admin/Informasi') ?>">
+          <i class="icon-layout menu-icon"></i>
+          <span class="menu-title">Data Informasi</span>
+        </a>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo site_url('admin/Data_checkout/pdf') ?>">
           <i class="icon-layout menu-icon"></i>

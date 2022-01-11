@@ -10,8 +10,7 @@ class Model_invoice extends CI_Model{
         $invoice = array(
             'nama' => $nama,
             'alamat' => $alamat,
-            'tgl_pesan' => date('Y-m-d H:i:s'),
-            'batas_bayar' => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') +1, date('Y')))
+            'tgl_pesan' => date('Y-m-d H:i:s')
 
         );
         $this->db->insert('tbl_invoice', $invoice);
@@ -41,7 +40,7 @@ return TRUE;
         }
 
         public function ambil_id_invoice($id_invoice){
-            $result = $this->db->where('id', $id_invoice)->limit(1)->get('tbl_invoice');
+            $result = $this->db->where('order_id', $id_invoice)->limit(1)->get('tbl_invoice');
             if($result->num_rows()>0){
                 return $result->row();
             } else {
