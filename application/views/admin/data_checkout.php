@@ -30,8 +30,9 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>Id</th>
-                          <th>Id Order</th>
+                          <th>No</th>
+                          <th>No Invoice</th>
+                          <th>Nama pengguna</th>
                           <th>Total Harga</th>
                           <th>Tipe Pembayaran</th>
                           <th>Bank</th>
@@ -43,11 +44,12 @@
                         </tr>
                       </thead>
                       <tbody>
-                          <?php foreach ($checkout as $inv):?>
+                          <?php $no = 1; foreach ($checkout as $inv):?>
                         <tr>   
-                        <td><?php echo $inv->id?></td>                    
+                        <td><?php echo $no++?></td>                    
                         <td><?php echo $inv->order_id?></td>                    
-                        <td><?php echo $inv->gross_amount?></td>                    
+                        <td><?php echo $inv->user?></td>                    
+                        <td><?php echo 'Rp'.number_format($inv->gross_amount,2,'.',',')?></td>                    
                         <td><?php echo $inv->payment_type?></td>                    
                         <td><?php echo $inv->bank?></td>    
                         <td><?php echo $inv->va_number?></td>    
@@ -62,7 +64,7 @@
                         }?>
                       </td>    
                         <td><?php echo $inv->transaction_time?></td>    
-                        <td><div class="btn btn-primary"><a href="<?= $inv->pdf_url?>">Download</a></div></td>          
+                        <td><div class="btn btn-primary"><a style="color: white;" href="<?= $inv->pdf_url?>">Download</a></div></td>          
                         </tr>
                         
                         <?php endforeach; ?>

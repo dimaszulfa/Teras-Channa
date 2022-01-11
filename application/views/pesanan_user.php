@@ -14,35 +14,37 @@
         <div class="container-fluid">
             <h4>Keranjang Belanja</h4>
             <table class="table table-bordered table-striped table-hover">
+
                 <tr>
                     <th>No</th>
                     <th>No. Invoice</th>
                     <th>Waktu Transaksi</th>
                     <th>Status Transaksi</th>
-                    <th>No Resi</th>
                     <th>Harga</th>
                     <th>Detail Barang</th>
+                    <th>No Resi</th>
                 </tr>
-                <!-- <?php
-                $no=0;
-                foreach ($this->cart->contents() as $items) : ?>
+                <?php $no = 1; foreach($checkout as $chk) {?>
                 <tr>
-                    <td><?= $no++?></td>
-                    <td><?=  $items['name']?></td>
-                    <td><?=  $items['qty']?></td>
-                    <td align="right">Rp. <?=number_format($items['price'], 0, ',','.')?></td>
-                    <td align="right">Rp. <?= number_format($items['subtotal'], 0, ',','.')?></td>
+                    <td><?=$no++?></td>
+                    <td><?=$chk->order_id?></td>
+                    <td><?=$chk->transaction_time?></td>
+                    <td><?php
+                        if($chk->transaction_status == 'expire'){
+                          echo '<label class="badge badge-danger">Expire</label>';
+                        } elseif($chk->transaction_status == 'settlement'){
+                          echo '<label class="badge badge-success">Berhasil</label>';
+                        } elseif($chk->transaction_status == 'pending'){
+                          echo '<label class="badge badge-warning">Pending</label>';
+                        }?></td>
+                    <td><?= 'Rp'.' '.number_format($chk->gross_amount,2,'.',',')?></td>
+                    <td><a href="<?=base_url().'dashboard/detail_pesanan_user/'.$chk->order_id?>"><div class="btn btn-primary">Detail</div></td></a>
+                    <td></td>
+
+                    <?php } ?>
                 </tr>
-                <?php endforeach; ?>
-                <tr><td colspan="4"></td>
-                    <td align="right">Rp. <?= number_format($this->cart->total()), 0, ',','.'?></td>
-                </tr> -->
+          
             </table>
-            <div align="right">
-            <a href="<?= base_url('dashboard/hapus_keranjang')?>"><div class="btn btn-danger text-center">Hapus Keranjang</div></a>
-            <a href="<?= base_url('dashboard/index')?>"><div class="btn btn-primary text-center">Lanjutkan belanja</div></a>
-            <a href="<?= base_url('dashboard/pembayaran')?>"><div class="btn btn-success text-center">Pembayaran</div></a>
-            </div>
         </div>
 
     </div>

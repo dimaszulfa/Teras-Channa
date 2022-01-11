@@ -33,7 +33,7 @@ img{max-width:100%;}
     src:url(../fonts/BebasNeue-webfont.ttf) format('truetype');
 }
 body {
-	font-family: 'bebas_neueregular';
+	font-family: 'Source Sans Pro';
 	background:#ffffff;
 	font-size: 100%;
 }
@@ -749,7 +749,6 @@ h2.top{
 	font-family: 'Source Sans Pro', sans-serif;
 }
 .ser-main h4{
-	font-family: 'bebas_neueregular';
 	font-size: 2em;
 	color: #777777;
 	text-shadow: 0 1px 0 #ffffff;
