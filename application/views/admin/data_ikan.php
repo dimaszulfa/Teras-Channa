@@ -90,8 +90,8 @@
                           <th>Famili</th>
                           <th>Ukuran(cm)</th>
                           <th>Berat(kg)</th>
-                          <th>Usia</th>
-                          <th>Harga</th>
+                          <th>Usia(bulan)</th>
+                          <th>Harga(Rp)</th>
                           <th>Stok</th>
                           <th>Gambar</th>
                           <th>Keterangan</th>
