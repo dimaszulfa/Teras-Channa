@@ -2,13 +2,8 @@
 <div class="col-lg-10 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-<<<<<<< HEAD
-                  <h4 class="card-title">Detail Pemesanan <div class="btn-success">No. Invoice: <?= $invoice->id?></div></h4>
-             
-=======
                   <h4 class="card-title">Detail Pemesanan<br> <div class="btn-success">No. Invoice: <?= $invoice->order_id?></div></h4>
                  
->>>>>>> info_graphic
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
