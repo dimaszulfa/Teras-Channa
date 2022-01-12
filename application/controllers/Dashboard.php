@@ -155,7 +155,7 @@ class Dashboard extends CI_Controller{
     public function sejarah(){
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('sejarah');
+        $this->load->view('tentang');
         $this->load->view('templates/footer'); 
     }
 

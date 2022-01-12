@@ -44,7 +44,6 @@
             <ul>
                 <li class="active"><a href="<?= base_url()?>">Home</a></li> |
                 <li><a href="<?=base_url().'Informasi/index'?>">Informasi Ikan Channa</a></li> |
-                <li><a href="#">Kontak Kami</a></li> |
                 <li><a href="<?=base_url('dashboard/sejarah')?>">Tentang Kami</a></li> |
                 <?php if(!$this->session->userdata('usertype')) { ?>
                 <li><a href="<?= base_url().'otontefikasi/login'?>">Masuk</a></li> |
