@@ -39,6 +39,10 @@
         <input type="number" class="form-control" id="usia" name="usia" placeholder="Usia(Bln)">
       </div>
       <div class="form-group">
+        <label for="exampleInputConfirmPassword1">Asal</label>
+        <input type="text" class="form-control" id="asal" name="asal" placeholder="Asal">
+      </div>  
+      <div class="form-group">
         <label for="exampleInputConfirmPassword1">Harga</label>
         <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga(IDR)">
       </div>   
@@ -91,6 +95,7 @@
                           <th>Ukuran(cm)</th>
                           <th>Berat(kg)</th>
                           <th>Usia(bulan)</th>
+                          <th>Asal</th>
                           <th>Harga(Rp)</th>
                           <th>Stok</th>
                           <th>Gambar</th>
@@ -108,6 +113,7 @@
                           <td><?=$fish->ukuran?></td>
                           <td><?=$fish->berat?></td>
                           <td><?=$fish->usia?></td>
+                          <td><?=$fish->asal?></td>
                           <td>Rp<?=number_format($fish->harga, 2, ',', '.')?></td>
                           <td><?=$fish->stok?></td>
                           <th><img src="<?=base_url('uploads/'.$fish->gambar)?>" style="width:100px;height:100px;" /></th>

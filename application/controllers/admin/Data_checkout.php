@@ -70,8 +70,10 @@ class Data_checkout extends CI_Controller{
     function pdf()
     {
         // $this->load->view('admin/pdf');
+        $date = $this->input->post('date');
+        $date1 = $this->input->post('date1');
         $this->load->library('pdf');
-        $data['transaksi'] = $this->Model_checkout->transaksiberhasil();
+        $data['transaksi'] = $this->Model_checkout->transaksiberhasil($date, $date1);
         $html = $this->load->view('admin/pdf', $data, true);
         $this->pdf->createPDF($html, 'laporan_penjualan', false);
     }

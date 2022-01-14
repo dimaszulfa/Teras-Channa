@@ -1,4 +1,7 @@
 <script src="<?php echo base_url()?>/assets/js/Chart.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> 
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script> 
 <div class="main-panel">
   <div class="content-wrapper">
     <div class="row">
@@ -35,9 +38,36 @@
         $nama .= "'$jur'". ", ";
         $jum=$item->jumlah;
         $jumlah .= "$jum". ", ";
+        $total += $item->jumlah;
     }
     ?> -->
 <script>
+  var options = {
+            scales: {
+            responsive: false,
+            maintainAspectRatio: true,
+                // yAxes: [{
+                //     ticks: {
+                //         beginAtZero:true
+                //     }
+                // }]
+            },
+            plugins: {
+     datalabels: {
+       formatter: (value, ctx) => {
+         let datasets = ctx.chart.data.datasets;
+         if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+           let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+           let percentage = Math.round((value / sum) * 100) + '%';
+           return percentage;
+         } else {
+           return percentage;
+         }
+       },
+       color: 'green',
+     }
+   }
+        }
     var ctx = document.getElementById('barChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -65,22 +95,12 @@
       ],
       borderWidth: 1,
       fill: false,
-                data: [<?php echo $jumlah; ?>],
+                data: [<?php echo $jumlah;?>],
 
             }]
         },
         // Configuration options go here
-        options: {
-            scales: {
-            responsive: false,
-            maintainAspectRatio: true,
-                // yAxes: [{
-                //     ticks: {
-                //         beginAtZero:true
-                //     }
-                // }]
-            }
-        }
+        options: options
     });
 </script>
 

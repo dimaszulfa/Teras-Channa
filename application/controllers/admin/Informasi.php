@@ -1,6 +1,15 @@
 <?php
 
 class informasi extends CI_Controller{
+    public function __construct(){
+        parent::__construct();
+        $tipe = $this->session->userdata('usertype');
+        if (! $this->session->userdata('username')){
+            redirect('otontefikasi/login');
+        }
+        else if ($tipe =="pembeli")redirect('otontefikasi/login');
+    }
+    
     public function index(){
         $data['info'] = $this->Model_Informasi->tampil_data()->result();
         $this->load->view('templates_admin/header');
