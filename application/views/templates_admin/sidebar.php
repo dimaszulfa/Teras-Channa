@@ -81,14 +81,8 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#tambah_ikan">
           <i class="icon-layout menu-icon"></i>
-          <span class="menu-title">Data Informasi</span>
-
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('admin/Data_checkout/pdf') ?>">
-          <i class="icon-layout menu-icon"></i>
           <span class="menu-title">Download Transaksi</span>
+
         </a>
       </li>
     </ul>
