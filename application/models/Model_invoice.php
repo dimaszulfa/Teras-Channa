@@ -39,6 +39,16 @@ return TRUE;
             }
         }
 
+        public function tampil_dataresi($user){
+            $result = $this->db->where('nama', $user)->get('tbl_invoice');
+            if($result->num_rows()>0){
+                return $result->result();
+            }else{
+                return false;
+            }
+        }
+
+
         public function ambil_id_invoice($id_invoice){
             $result = $this->db->where('order_id', $id_invoice)->limit(1)->get('tbl_invoice');
             if($result->num_rows()>0){
@@ -56,6 +66,13 @@ return TRUE;
                 return false;
             }
         }
+
+        public function addresi($order_id, $data){
+            $this->db->where('order_id',$order_id);
+            $this->db->update('tbl_invoice', $data);    
+        }
+    
+
         // public function invoice(){
         //     $this->db->select('tbl_invoice.*,tbl_pesanan.*')->from('tbl_invoice');
         // $this->db->join('tbl_pesanan','tbl_pesanan.id_invoice=tbl_invoice.id');

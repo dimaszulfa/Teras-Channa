@@ -32,11 +32,19 @@ class Model_checkout extends CI_Model{
     }
         
 
-    public function transaksiberhasil(){
+    public function transaksiberhasil($date, $date1){
+        // $multiClause = array(
+        //     'tbl_checkout.transaction_status'=>'settlement',
+        //     'tbl_checkout.transaction_time' >= $date,
+        //     'tbl_checkout.transaction_time' <= $date1 );
+
         $this->db->select('tbl_checkout.*,tbl_user.*')->from('tbl_checkout');
-    $this->db->join('tbl_user','tbl_user.username=tbl_checkout.user');
-    $this->db->where('tbl_checkout.transaction_status','settlement');
-    return $this->db->get()->result();
+        $this->db->join('tbl_user','tbl_user.username=tbl_checkout.user');
+        // $this->db->where($multiClause);
+        $this->db->where('tbl_checkout.transaction_status', 'settlement');
+        $this->db->where('tbl_checkout.transaction_time >=', $date);
+        $this->db->where('tbl_checkout.transaction_time <=', $date1);
+        return $this->db->get()->result();
     }
 
     public function update($data, $id){

@@ -19,6 +19,10 @@ class Dashboard extends CI_Controller{
     }
 
     public function tambah_keranjang($id){
+        $tipe = $this->session->userdata('usertype');
+        if (! $this->session->userdata('username')){
+            redirect('otontefikasi/login');
+        }
         $ikan = $this->Model_ikan->find($id);
         $data = array(
             'id'      => $ikan->id,
@@ -31,6 +35,10 @@ class Dashboard extends CI_Controller{
     redirect('dashboard');
     }
     public function detail_keranjang(){
+        $tipe = $this->session->userdata('usertype');
+        if (! $this->session->userdata('username')){
+            redirect('otontefikasi/login');
+        }
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('cart');
@@ -43,6 +51,10 @@ class Dashboard extends CI_Controller{
     }
 
     public function pembayaran(){
+        $tipe = $this->session->userdata('usertype');
+        if (! $this->session->userdata('username')){
+            redirect('otontefikasi/login');
+        }
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('pembayaran');
@@ -134,7 +146,7 @@ class Dashboard extends CI_Controller{
     }
 
     public function pesanan(){
-        $data['invoice'] = $this->Model_invoice->tampil_data();
+        $data['invoice'] = $this->Model_invoice->tampil_dataresi($this->session->userdata('username'));
         $data['checkout'] = $this->Model_checkout->tampil_data_pilihan($this->session->userdata('username'));
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

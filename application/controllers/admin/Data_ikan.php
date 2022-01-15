@@ -75,6 +75,7 @@
                 $harga = $this->input->post('harga');
                 $stok = $this->input->post('stok');
                 $keterangan = $this->input->post('keterangan');
+                $asal = $this->input->post('asal');
                 $gambar = $_FILES['gambar']['name'];
                 if ($gambar = ''){
                 } else {
@@ -98,7 +99,8 @@
                     'harga' => $harga,
                     'stok' => $stok,
                     'gambar' => $gambar,
-                    'keterangan' => $keterangan
+                    'keterangan' => $keterangan,
+                    'asal' => $asal
                 );
                 $this->load->model('model_ikan');
                 $this->model_ikan->tambah_ikan($data, 'tbl_ikan');
