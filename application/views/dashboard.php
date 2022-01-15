@@ -11,7 +11,7 @@
     <div class="wrap">
         <div class="main">
             <!-- start grids_of_3 -->
-            <?php foreach ($ikans as $ikan) : ?>
+            <?php foreach ($data->result()  as $ikan) : ?>
                 <div class="grids_of_3">
                     <div class="grid1_of_3">
                         <a href="<?= base_url('dashboard/detail/') . $ikan->id ?>"><img src="<?= base_url() . 'uploads/' . $ikan->gambar ?>" alt="" /></a>
@@ -41,9 +41,9 @@
                 <?php endforeach; ?>
                 </div>
                 <div class="clear"></div>
-
+<?=$pagination?>
                 <!-- end grids_of_3 -->
-                <nav aria-label="Page navigation example">
+                <!-- <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center pagination-lg">
                         <li class="page-item disabled">
                             <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -55,7 +55,7 @@
                             <a class="page-link" href="#">Next</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
         </div>
     </div>
 </div>

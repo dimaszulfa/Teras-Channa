@@ -8,6 +8,47 @@ class Dashboard extends CI_Controller{
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('templates/slider');
+
+
+        $config['base_url'] = site_url('Dashboard/index'); //site url
+        $config['total_rows'] = $this->db->count_all('tbl_ikan'); //total row
+        $config['per_page'] = 3;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+
+    $config['first_link']       = 'First';
+    $config['last_link']        = 'Last';
+    $config['next_link']        = 'Next';
+    $config['prev_link']        = 'Prev';
+    $config['full_tag_open']    = '<nav aria-label="..."><ul class="pagination justify-content-center pagination-lg">';
+    $config['full_tag_close']   = '</ul></nav>';
+    $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+    $config['num_tag_close']    = '</span></li>';
+    $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+    $config['cur_tag_close']    = '</span></li>';
+    // $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+    // $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+    // $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+    // $config['prev_tagl_close']  = '</span>Next</li>';
+    $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+    $config['first_tag_close'] = '</span></li>';
+    $config['last_tag_open']   = '<li class="page-item"><span class="page-link">';
+    $config['last_tag_close'] = '</span></li>';
+    $config['next_tag_open']   = '<li class="page-item"><span class="page-link">';
+    $config['next_tag_close'] = '</span></li>';
+    $config['prev_tag_open']   = '<li class="page-item"><span class="page-link">';
+    $config['prev_tag_close'] = '</span></li>';
+    // $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+    // $config['last_tagl_close']  = '</span></li>';
+    // $config['attributes'] = array('class' => 'page-link');
+    $this->pagination->initialize($config);
+    $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+    //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+    $data['data'] = $this->Model_ikan->get_ikan_list($config["per_page"], $data['page']);           
+
+    $data['pagination'] = $this->pagination->create_links();
+
         $this->load->view('dashboard', $data);
         $this->load->view('templates/footer');
     }

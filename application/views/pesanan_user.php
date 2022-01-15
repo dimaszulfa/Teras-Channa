@@ -24,7 +24,8 @@
                     <th>No Resi</th>
                     <th>Detail Barang</th>
                 </tr>
-                <?php $no = 1; $res = 0; foreach($checkout as $chk) {?>
+                <?php if($checkout){
+                    $no = 1; $res = 0; foreach($checkout as $chk) {?>
                 <tr>
                     <td><?=$no++?></td>
                     <td><?=$chk->order_id?></td>
@@ -40,9 +41,8 @@
                     <td><?= 'Rp'.' '.number_format($chk->gross_amount,2,'.',',')?></td>
                     <td><?=$invoice[$res++]->resi?></td>
                     <td><a href="<?=base_url().'dashboard/detail_pesanan_user/'.$chk->order_id?>"><div class="btn btn-primary">Detail</div></td></a>
-                    <td></td>
 
-                    <?php } ?>
+                    <?php   } } ?>
                 </tr>
           
             </table>

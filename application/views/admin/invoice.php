@@ -61,7 +61,7 @@
                             </div>              
                             <div class="form-group">
                               <label for="exampleInputUsername1">Nomor Resi</label>
-                              <input type="number" class="form-control" id="resi" name="resi" placeholder="Resi" >
+                              <input type="text" class="form-control" id="resi" name="resi" placeholder="Resi" >
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

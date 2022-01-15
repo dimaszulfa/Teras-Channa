@@ -23,7 +23,7 @@
           <div style="color: red;"><?= form_error('nama'); ?></div>
       </div>
       <div class="form-group">
-        <label for="exampleInputUsername1">Famili</label>
+        <label for="exampleInputUsername1">Jenis</label>
         <input type="text" class="form-control" id="famili" name="famili" placeholder="Famili" >
       </div>
       <div class="form-group">
@@ -91,7 +91,7 @@
                         <tr>
                           <th>No</th>
                           <th>Nama</th>
-                          <th>Famili</th>
+                          <th>Jenis</th>
                           <th>Ukuran(cm)</th>
                           <th>Berat(Gr)</th>
                           <th>Usia(bulan)</th>
