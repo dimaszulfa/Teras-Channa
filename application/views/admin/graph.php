@@ -39,7 +39,7 @@
     var ctx = document.getElementById('barChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
-        type: 'pie',
+        type: 'bar',
         // The data for our dataset
         data: {
             labels: [<?php echo $nama; ?>],

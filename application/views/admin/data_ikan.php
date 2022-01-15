@@ -89,7 +89,7 @@
                           <th>Nama</th>
                           <th>Famili</th>
                           <th>Ukuran(cm)</th>
-                          <th>Berat(kg)</th>
+                          <th>Berat(Gr)</th>
                           <th>Usia(bulan)</th>
                           <th>Harga(Rp)</th>
                           <th>Stok</th>
