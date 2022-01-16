@@ -26,10 +26,6 @@ class Dashboard extends CI_Controller{
     $config['num_tag_close']    = '</span></li>';
     $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
     $config['cur_tag_close']    = '</span></li>';
-    // $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
-    // $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
-    // $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
-    // $config['prev_tagl_close']  = '</span>Next</li>';
     $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
     $config['first_tag_close'] = '</span></li>';
     $config['last_tag_open']   = '<li class="page-item"><span class="page-link">';
@@ -38,9 +34,7 @@ class Dashboard extends CI_Controller{
     $config['next_tag_close'] = '</span></li>';
     $config['prev_tag_open']   = '<li class="page-item"><span class="page-link">';
     $config['prev_tag_close'] = '</span></li>';
-    // $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-    // $config['last_tagl_close']  = '</span></li>';
-    // $config['attributes'] = array('class' => 'page-link');
+
     $this->pagination->initialize($config);
     $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
@@ -60,7 +54,6 @@ class Dashboard extends CI_Controller{
     }
 
     public function tambah_keranjang($id){
-        $tipe = $this->session->userdata('usertype');
         if (! $this->session->userdata('username')){
             redirect('otontefikasi/login');
         }
@@ -76,7 +69,6 @@ class Dashboard extends CI_Controller{
     redirect('dashboard');
     }
     public function detail_keranjang(){
-        $tipe = $this->session->userdata('usertype');
         if (! $this->session->userdata('username')){
             redirect('otontefikasi/login');
         }
@@ -92,7 +84,6 @@ class Dashboard extends CI_Controller{
     }
 
     public function pembayaran(){
-        $tipe = $this->session->userdata('usertype');
         if (! $this->session->userdata('username')){
             redirect('otontefikasi/login');
         }
@@ -103,7 +94,6 @@ class Dashboard extends CI_Controller{
     }
 
     public function proses_pesanan(){
-        // $is_processed = $this->Model_invoice->index();
             $this->load->view('templates/header');
             $this->load->view('templates/sidebar');
             $result = json_decode($this->input->post('result_data'));
@@ -187,7 +177,7 @@ class Dashboard extends CI_Controller{
     }
 
     public function pesanan(){
-        $data['invoice'] = $this->Model_invoice->tampil_dataresi($this->session->userdata('username'));
+        $data['invoice'] = $this->Model_Invoice->tampil_dataresi($this->session->userdata('username'));
         $data['checkout'] = $this->Model_checkout->tampil_data_pilihan($this->session->userdata('username'));
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -197,15 +187,15 @@ class Dashboard extends CI_Controller{
     }
 
     public function detail_pesanan_user($id_invoice){
-        $data['invoice'] = $this->Model_invoice->ambil_id_invoice($id_invoice);
-        $data['pesanan'] = $this->Model_invoice->ambil_id_pesanan($id_invoice);
+        $data['invoice'] = $this->Model_Invoice->ambil_id_invoice($id_invoice);
+        $data['pesanan'] = $this->Model_Invoice->ambil_id_pesanan($id_invoice);
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('detail_pesanan_user', $data);
         $this->load->view('templates/footer'); 
     }
 
-    public function sejarah(){
+    public function tentang(){
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('tentang');

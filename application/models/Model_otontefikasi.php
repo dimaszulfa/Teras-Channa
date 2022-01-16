@@ -61,7 +61,6 @@ class Model_otontefikasi extends CI_Model {
 			return true;
 		}
 		else return false;
-		// return $this->db->get('tbl_user')->row();
 	}
 
 }

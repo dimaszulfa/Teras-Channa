@@ -45,7 +45,6 @@ class Data_checkout extends CI_Controller{
        if($result->status_message == 'Success, transaction is found'){
         $dataupdate = [
             'transaction_status' => $result->transaction_status,
-            // 'date_modified' => time()
         ];
 
 
@@ -69,7 +68,6 @@ class Data_checkout extends CI_Controller{
     }
     function pdf()
     {
-        // $this->load->view('admin/pdf');
         $date = $this->input->post('date');
         $date1 = $this->input->post('date1');
         $this->load->library('pdf');
@@ -82,6 +80,3 @@ class Data_checkout extends CI_Controller{
 
     
 }
-
-
-?>

@@ -2,7 +2,7 @@
 <div class="main_bg1">
     <div class="wrap">
         <div class="main1">
-            <h2>Produk Unggulan</h2>
+            <h2>Produk kami</h2>
         </div>
     </div>
 </div>
@@ -20,19 +20,13 @@
                             <h4>Rp. <?= number_format($ikan->harga, 0, ",", ".") ?></h4>
                         </div>
 
-                        <!-- <button type="button" class="btn btn-primary">
-                            <h4 style="color:white">Beli</h4>
-                        </button> -->
                         <div class="price">
                             <h4>
-                                <!-- <span style="background-color: #007BFF;">Beli</span> -->
-                                <?php if($ikan->stok <= 0) {?><span style="background-color:grey"><a style="text-decoration:none; color:white"> Sold</a></span><?php } ?>
-                                <?php if($ikan->stok > 0) {?><span style="background-color:#3CC395"><a style="text-decoration:none; color:white" href="<?= base_url('dashboard/tambah_keranjang/' . $ikan->id) ?>"> Keranjang</a></span><?php } ?>
+                                <?php if ($ikan->stok <= 0) { ?><span style="background-color:grey"><a style="text-decoration:none; color:white"> Sold</a></span><?php } ?>
+                                <?php if ($ikan->stok > 0) { ?><span style="background-color:#3CC395"><a style="text-decoration:none; color:white" href="<?= base_url('dashboard/tambah_keranjang/' . $ikan->id) ?>"> Keranjang</a></span><?php } ?>
                             </h4>
                         </div>
-                        <!-- <button type="button" class="btn btn-success">
-                            <h4 style="color:white"><a style="color:white" href="<?= base_url('dashboard/tambah_keranjang/' . $ikan->id) ?>">Tambah Ke Keranjang</a></h4>
-                            </button> -->
+
 
                         <span class="b_btm"></span>
 
@@ -41,21 +35,8 @@
                 <?php endforeach; ?>
                 </div>
                 <div class="clear"></div>
-<?=$pagination?>
-                <!-- end grids_of_3 -->
-                <!-- <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center pagination-lg">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav> -->
+                <?= $pagination ?>
+
         </div>
     </div>
 </div>

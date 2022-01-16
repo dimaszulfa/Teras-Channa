@@ -41,10 +41,6 @@
             $config['num_tag_close']    = '</span></li>';
             $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
             $config['cur_tag_close']    = '</span></li>';
-            // $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
-            // $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
-            // $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
-            // $config['prev_tagl_close']  = '</span>Next</li>';
             $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
             $config['first_tag_close'] = '</span></li>';
             $config['last_tag_open']   = '<li class="page-item"><span class="page-link">';
@@ -53,9 +49,6 @@
             $config['next_tag_close'] = '</span></li>';
             $config['prev_tag_open']   = '<li class="page-item"><span class="page-link">';
             $config['prev_tag_close'] = '</span></li>';
-            // $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-            // $config['last_tagl_close']  = '</span></li>';
-            // $config['attributes'] = array('class' => 'page-link');
             $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
  
@@ -108,8 +101,8 @@
                     'keterangan' => $keterangan,
                     'asal' => $asal
                 );
-                $this->load->model('model_ikan');
-                $this->model_ikan->tambah_ikan($data, 'tbl_ikan');
+                $this->load->model('Model_ikan');
+                $this->Model_ikan->tambah_ikan($data, 'tbl_ikan');
                 $this->session->set_flashdata('msg','ditambahkan');
 
                 redirect('admin/data_ikan/index');
@@ -122,8 +115,8 @@
         public function edit($id){
             $where = array('id' => $id);
             $valid = $this->validation('edit');
-            $this->load->model('model_ikan');
-            $data['ikan'] = $this->model_ikan->edit_ikan($where, 'tbl_ikan')->result();
+            $this->load->model('Model_ikan');
+            $data['ikan'] = $this->Model_ikan->edit_ikan($where, 'tbl_ikan')->result();
             $this->load->view('templates_admin/header');
             $this->load->view('templates_admin/top_bar');
             $this->load->view('templates_admin/sidebar');
@@ -165,8 +158,8 @@
                     'gambar' => $gambar,
                     'keterangan' =>$keterangan
                 );
-                $this->load->model('model_ikan');
-                $this->model_ikan->update_ikan($id, $data);
+                $this->load->model('Model_ikan');
+                $this->Model_ikan->update_ikan($id, $data);
                 $this->session->set_flashdata('msg','Diubah');
 
                 redirect('admin/data_ikan/index');
@@ -175,8 +168,8 @@
         }
 
         public function delete($id){
-            $this->load->model('model_ikan');
-            $this->model_ikan->delete_ikan($id);
+            $this->load->model('Model_ikan');
+            $this->Model_ikan->delete_ikan($id);
             redirect('admin/data_ikan/index');
         }
 

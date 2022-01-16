@@ -1,6 +1,6 @@
 <?php 
 
-class Model_invoice extends CI_Model{
+class Model_Invoice extends CI_Model{
     public function index(){
         date_default_timezone_set('Asia/Jakarta');
         $nama = $this->session->userdata('username');
@@ -73,11 +73,5 @@ return TRUE;
         }
     
 
-        // public function invoice(){
-        //     $this->db->select('tbl_invoice.*,tbl_pesanan.*')->from('tbl_invoice');
-        // $this->db->join('tbl_pesanan','tbl_pesanan.id_invoice=tbl_invoice.id');
-        // return $this->db->get()->result();
-        // }
+ 
 }
-
-?>
