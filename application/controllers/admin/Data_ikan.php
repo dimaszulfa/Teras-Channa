@@ -121,7 +121,7 @@
 
         public function edit($id){
             $where = array('id' => $id);
-            $valid = $this->validation();
+            $valid = $this->validation('edit');
             $this->load->model('model_ikan');
             $data['ikan'] = $this->model_ikan->edit_ikan($where, 'tbl_ikan')->result();
             $this->load->view('templates_admin/header');
@@ -149,6 +149,9 @@
                         } else {
                             $gambar =$this->upload->data('file_name');
                         }
+                }
+                else {
+                    $gambar = $this->input->post('pic');
                 }
     
                 $data = array (
@@ -178,8 +181,10 @@
         }
 
 
-        public function validation() {
-            if (empty($_FILES['gambar']['name']))$this->form_validation->set_rules('gambar', 'Foto Ikan', 'trim|required');
+        public function validation($type) {
+            if(!$type == 'edit'){
+                if (empty($_FILES['gambar']['name']))$this->form_validation->set_rules('gambar', 'Foto Ikan', 'trim|required');
+            }
         
             $this->form_validation->set_rules('nama', 'Nama', 'required');
             $this->form_validation->set_rules('famili', 'Famili', 'required');

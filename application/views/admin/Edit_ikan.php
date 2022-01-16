@@ -59,6 +59,9 @@
                       <textarea name ="keterangan" class="form-control" id="exampleKeterangan1" rows="4"><?=$ikn->keterangan?></textarea>
                       <div style="color: red;"><?= form_error('keterangan'); ?></div>
                     </div>
+                    <div class="form-group">
+                      <input type="hidden" value="<?=$ikn->gambar?>" name="pic" class="form-control" id="pic">
+                    </div>
                     <center><input type="submit" class="btn btn-primary mr-2" name="submit">
                    <a href="<?=site_url('admin/data_ikan')?>"> <input type="button" class="btn btn-danger mr-2" value="Cancel"></a></input></center>
                   </form>
