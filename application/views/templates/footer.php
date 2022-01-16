@@ -14,8 +14,8 @@
             <div class="grid1_of_4">
                 <h4>KONTAK</h4>
                 <ul class="f_nav">
-                    <li><a href="">Instagram</a></li>
-                    <li><a href="">Whatsapp</a></li>
+                    <li><a href="https://www.instagram.com/teras_channa_/">Instagram</a></li>
+                    <li><a href="https://wa.me/62895411839596?text=Hallo+Admin%2C+saya+ingin+bertanya+sesuatu+">Whatsapp</a></li>
 
                 </ul>
             </div>

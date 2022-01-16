@@ -9,16 +9,14 @@
         <a class="navbar-brand brand-logo-mini" href="<?= base_url('admin/dashboard_admin') ?>"><img src="<?= base_url() ?>assets/images/logo.png"alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
+ 
        
         <ul class="navbar-nav navbar-nav-right">
       
  
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-           <i class="icon-ellipsis"></i>
+            <i class="icon-ellipsis"></i>
 
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
