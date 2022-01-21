@@ -12,7 +12,7 @@
   <h1 class="text-center bg-info">Data Invoice</h1>
   <center>
     <h4 class="card-title">
-      <div class="btn-success">No. Invoice: <?= $invoice->id ?></div>
+      <div class="btn-success">No. Invoice: <?= $invoice->order_id ?></div>
     </h4>
     <h6>Nama Lengkap : <?= $invoice->nama ?></h6>
     <h6>Alamat : <?= $invoice->alamat ?></h6>

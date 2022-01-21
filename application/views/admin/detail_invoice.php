@@ -37,6 +37,8 @@
         </table>
         <a href="<?= base_url() . 'admin/invoice/index' ?>">
           <div class="btn btn-primary">Kembali</div>
+          <a href="<?= base_url() . 'admin/invoice/print/'. $invoice->order_id ?>">
+          <div class="btn btn-primary">Print</div>
         </a>
       </div>
     </div>
