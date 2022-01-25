@@ -25,6 +25,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/teras_channa/';
 
+$config['rajaongkir_api_key'] = "44b41fedcdbe43698fcbeba6fdd24682";
+
+/**
+ * RajaOngkir account type: starter, basic or pro
+ * http://rajaongkir.com/dokumentasi#akun-ringkasan
+ * 
+ */
+$config['rajaongkir_account_type'] = "basic";
 /*
 |--------------------------------------------------------------------------
 | Index File
