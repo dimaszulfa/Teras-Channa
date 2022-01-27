@@ -37,7 +37,7 @@ class Snap extends CI_Controller {
     {
 		$transaction_details = array(
 			'order_id' => rand(),
-			'gross_amount' => $this->cart->total() + $this->input->post('kurir'), // no decimal allowed for creditcard
+			'gross_amount' => $this->cart->total(), // no decimal allowed for creditcard
 		  );
 
 		  $item_details = array();
