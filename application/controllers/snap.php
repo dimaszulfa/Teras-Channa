@@ -37,7 +37,7 @@ class Snap extends CI_Controller {
     {
 		$transaction_details = array(
 			'order_id' => rand(),
-			'gross_amount' => $this->cart->total(), // no decimal allowed for creditcard
+			'gross_amount' => $this->cart->total() + $this->input->post('kurir'), // no decimal allowed for creditcard
 		  );
 
 		  $item_details = array();
@@ -169,7 +169,7 @@ class Snap extends CI_Controller {
 	$gross = str_replace('.00','',$result->gross_amount);
 	$dataInput = [
 		'order_id' => $result->order_id,
-		'gross_amount' => $gross,
+		'gross_amount' => $gross + $this->input->post('kurir'),
 		'payment_type' => $result->payment_type,
 		'bank' => $bank,
 		'va_number' => $vaNumber,

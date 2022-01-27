@@ -47,6 +47,11 @@ class Dashboard extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
+    public function ongkir(){
+        $ongkir=$this->input->post('kurir');
+        $this->session->set_userdata('ongkir', $ongkir);
+    }
+
     public function add(){
         if($this->input->post('submit')){
             $this->Model_ikan->create();

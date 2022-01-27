@@ -61,7 +61,10 @@
   <option value=""> Pilih Kota</option>            
 </select>
 </div>
+<form action="<?= base_url() . 'dashboard/ongkir' ?>" class="forms-sample" method="post" enctype="multipart/form-data">
+<div id="containers" required></div>
 
+</form>
 <div id="hasil"></div>
 
 <script type="text/javascript">
@@ -138,9 +141,21 @@ $.getJSON("tarif/"+origin+"/"+des+"/"+qty+"/"+cour, function(data){
         x += "<p class='mb-0'><b>" + field.costs[i].service + "</b> : "+field.costs[i].description+"</p>";
 
          for (j in field.costs[i].cost) {
-              x += field.costs[i].cost[j].value +"<br>"+field.costs[i].cost[j].etd+"<br>"+field.costs[i].cost[j].note;
-          }
-       
+              x += field.costs[i].cost[j].value +"<br>"+field.costs[i].cost[j].etd+" Hari<br>"+field.costs[i].cost[j].note;
+              $('#containers').append(
+                $('<input>').prop({
+                    type: 'radio',
+                    id: 'kurir',
+                    name: 'kurir',
+                    value: field.costs[i].cost[j].value
+                })
+            ).append(
+                $('<label>').prop({
+                    for: field.costs[i].service
+                }).html(field.costs[i].cost[j].value + "  ")
+            )
+            }
+            
     }
 
     $op.html(x);
@@ -176,7 +191,6 @@ $.getJSON("kota/"+idpro, function(data){
 
             </form>
             <button type="submit" class="btn btn-primary mb-3" id="pay-button" disabled>Pesan</button>
-
             <script type="text/javascript">
                 $('#pay-button').click(function(event) {
                     event.preventDefault();
