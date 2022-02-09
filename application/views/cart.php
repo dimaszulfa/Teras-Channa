@@ -33,7 +33,7 @@
                     <?php endforeach; ?>
                     <tr>
                         <td colspan="4"></td>
-                        <td align="right">Rp. <?= number_format($this->cart->total()), 0, ',', '.' ?></td>
+                        <td align="right">Rp. <?= number_format($this->cart->total()) ?></td>
                     </tr>
                 </table>
                 <div align="right">
