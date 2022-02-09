@@ -50,7 +50,15 @@
                 </div>
 
 
-                <div class="form-group">
+               
+
+             
+
+            </form>
+
+       
+                <form action="<?= base_url() . 'snap/token' ?>" id="data" class="forms-sample" method="post" enctype="multipart/form-data">
+     <div class="form-group">
                     <select class="form-control" id="sel1">
                         <option value=""> Pilih Provinsi</option>
                     </select>
@@ -61,12 +69,7 @@
                         <option value=""> Pilih Kota</option>
                     </select>
                 </div>
-                <form action="<?= base_url() . 'dashboard/ongkir' ?>" class="forms-sample" method="post" enctype="multipart/form-data">
-                    <div id="containers" required></div>
-
-                </form>
-                <div id="hasil"></div>
-                <p id="output"></p>
+                <div id="containers" required></div>
 
                 <script type="text/javascript">
                     function getLokasi() {
@@ -176,14 +179,33 @@
 
                     }
                 </script>
+            <!-- <button type="submit" class="btn btn-primary mb-3" id="kurir">Pesan</button> -->
 
-
-            </form>
-            <button type="submit" class="btn btn-primary mb-3" id="pay-button" disabled>Pesan</button>
+                </form>
+                <div id="hasil"></div>
+                <p id="output"></p>
+            <button type="submit" class="btn btn-primary mb-3" id="pay-button" >Pesan</button>
 
             <!-- script js buat deteksi value radio button disatukan dengan snap midtrans dibawah-->
-            <!-- <script>
+            <script>
         const btn = document.querySelector('#pay-button');        
+        const btnKurir = document.querySelector('#kurir');    
+        console.log('kurir');
+        $('#data').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+        url: '<?=base_url().'snap/token'?>',
+        type: 'post',
+        data:$('#data').serialize(),
+        success:function(){
+            console.log('sukses');
+        }
+    });
+
+            // $('#data').submit();
+        
+        });
+
         const radioButtons = document.getElementsByName('kurir');
         btn.addEventListener("click", () => {
             let selectedSize;
@@ -194,24 +216,24 @@
                 }
             }
             // show the output:
-            output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size ` ;
+            output.innerText = selectedSize ? `Anda memilih pengiriman seharga : ${selectedSize}` : `Anda belum memilih pengiriman` ;
         });
-    </script> -->
+    </script>
             <script type="text/javascript">
-                        const radioButtons = document.getElementsByName('kurir');
+                        // const radioButtons = document.getElementsByName('kurir');
+       
                 $('#pay-button').click(function(event) {
-                    event.preventDefault();
                     $(this).attr("disabled", "disabled");
 
-                    let selectedSize;
-            for (const radioButton of radioButtons) {
-                if (radioButton.checked) {
-                    selectedSize = parseInt(radioButton.value);
-                    break;
-                }
-            }
-            // show the output:
-            output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size ` ;
+            //         let selectedSize;
+            // for (const radioButton of radioButtons) {
+            //     if (radioButton.checked) {
+            //         selectedSize = parseInt(radioButton.value);
+            //         break;
+            //     }
+            // }
+            // // show the output:
+            // output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size ` ;
                     $.ajax({
                         url: '<?= site_url() ?>/snap/token',
                         cache: false,

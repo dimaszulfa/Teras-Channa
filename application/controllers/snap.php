@@ -31,30 +31,39 @@ class Snap extends CI_Controller {
     public function index()
     {
     	$this->load->view('checkout_snap');
+
     }
 
     public function token()
     {
+		$x = $this->cart->total() + (int) $this->input->post('kurir');
+		$test = (int) $this->input->post('kurir');
 		$transaction_details = array(
 			'order_id' => rand(),
-			'gross_amount' => $this->cart->total(), // no decimal allowed for creditcard
+			'gross_amount' => $x, // no decimal allowed for creditcard
 		  );
 
-		  $item_details = array();
+		  $item_details = array(
+			'id' => 3333,
+			'price' => $test + $this->cart->total(),
+			'quantity' => 1,
+			'name' => "BARANG"
+		  );
 		  
 
-		foreach($this->cart->contents() as $item){
+		// foreach($this->cart->contents() as $item){
     
-		$item_details[] = array(
-		  'id' => $item['id'],
-		  'price' => $item['price'],
-		  'quantity' => $item['qty'],
-		  'name' => $item['name']
-		);
-				// Required
+		// $item_details[] = array(
+		//   'id' => $item['id'],
+		//   'price' => $item['price'],
+		//   'quantity' => $item['qty'],
+		//   'name' => $item['name']
+		// );
+		// 		// Required
 
   
-        }
+        // }
+	
 
 		
 	

@@ -72,7 +72,7 @@
 
     <div class="mt-4 row">
 
-      <div class="col-lg-12 grid-margin stretch-card">
+      <div class="col-lg-14 grid-margin stretch-card">
 
         <div class="card">
           <div class="card-body">
@@ -119,10 +119,10 @@
                       <td>Rp<?= number_format($fish->harga, 2, ',', '.') ?></td>
                       <td><?= $fish->stok ?></td>
                       <th><img src="<?= base_url('uploads/' . $fish->gambar) ?>" style="width:100px;height:100px;" /></th>
-                      <td><?= $fish->keterangan ?></td>
+                      <td><?= substr($fish->keterangan, 0, 20) . '...'; ?></td>
                       <td>
                         <center>
-                          <button type="button" class="btn btn-info" id="edit" value="Edit"><b><a style="color:white" href="<?= site_url('admin/data_ikan/edit/' . $fish->id) ?>">Update Data</a></b></button>
+                          <button type="button" class="btn btn-info" id="edit" value="Edit"><b><a style="color:white; " href="<?= site_url('admin/data_ikan/edit/' . $fish->id) ?>">Update Data</a></b></button>
                           <button type="button" class="btn btn-danger"><b><a style="color:white" class="tombol-hapus" href="<?= site_url('admin/data_ikan/delete/' . $fish->id) ?>">Delete</a></b></button>
                         </center>
                       </td>
