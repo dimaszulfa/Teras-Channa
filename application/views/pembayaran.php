@@ -216,7 +216,7 @@
                 }
             }
             // show the output:
-            output.innerText = selectedSize ? `Anda memilih pengiriman seharga : ${selectedSize}` : `Anda belum memilih pengiriman` ;
+            output.innerText = selectedSize ? `Jumlah ongkos kirim yang harus anda bayarkan seharga : ${selectedSize}` : `Anda belum memilih pengiriman` ;
         });
     </script>
             <script type="text/javascript">
