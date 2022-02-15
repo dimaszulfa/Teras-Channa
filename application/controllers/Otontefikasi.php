@@ -192,14 +192,21 @@
 				$config['mailtype']= "html";
 				$config['smtp_host']= "ssl://smtp.gmail.com";//pengaturan smtp
 				$config['smtp_port']= "465";
+                $config['send_multipart'] = FALSE;
 				$config['smtp_timeout']= "7";
-				$config['smtp_user']= "TerassChanna@gmail.com"; // isi dengan email kamu
-				$config['smtp_pass']= "ikangabus69"; // isi dengan password kamu
+                $config['_smtp_auth'] = TRUE; 
+				$config['smtp_user']= "terasschanna@gmail.com"; // isi dengan email kamu
+				$config['smtp_pass']= "btgznuijttmmxftz"; // isi dengan password kamu
 				$config['crlf']="\r\n"; 
 				$config['newline']="\r\n"; 
 				$config['wordwrap'] = TRUE;
 				//memanggil library email dan set konfigurasi untuk pengiriman email
 					
+				// $config['newline']="\r\n"; 
+				//memanggil library email dan set konfigurasi untuk pengiriman email
+					
+				$this->email->initialize($config);
+                $this->email->set_newline("\r\n");
 				$this->email->initialize($config);
 				//konfigurasi pengiriman
 				$this->email->from($config['smtp_user'], "Do not Reply");
