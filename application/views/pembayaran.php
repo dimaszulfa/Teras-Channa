@@ -135,7 +135,7 @@
                                     x += "<p class='mb-0'><b>" + field.costs[i].service + "</b> : " + field.costs[i].description + "</p>";
 
                                     for (j in field.costs[i].cost) {
-                                        x += field.costs[i].cost[j].value + "<br>" + field.costs[i].cost[j].etd + " Hari<br>" + field.costs[i].cost[j].note;
+                                        x +=" Harga : Rp." + field.costs[i].cost[j].value + "<br>" + "Estimasi : " + field.costs[i].cost[j].etd + " Hari<br>" + field.costs[i].cost[j].note;
                                         $('#containers').append(
                                             $('<input>').prop({
                                                 type: 'radio',
